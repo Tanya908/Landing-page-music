@@ -1,0 +1,189 @@
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap');
+
+@import "tailwindcss";
+
+@theme {
+    --color-dark-900: #111111;
+    --color-dark-700: #151717;
+
+    --color-green-100: #d0deda;
+    --color-green-300: #028762;
+    --color-green-500: #829690;
+    --color-green-700: #485954;
+
+    --color-light-100: #ffffff;
+    --color-light-200: #f0f0f0;
+
+    --color-red: #c32e20;
+
+    /* Fonts */
+    --font-raleway: "Raleway", system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+    --font-manrope: "Manrope", system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+
+    --text-title: 113px;
+    --text-title--line-height: 85%;
+    --text-title--font-weight: 400;
+    --text-title-transform:uppercase;
+
+    --text-heading-1: 80px;
+    --text-heading-1--line-height: 95%;
+    --text-heading-1--font-weight: 500;
+    --text-transform-1:uppercase;
+
+    --text-heading-2: 54px;
+    --text-heading-2--line-height: 100%;
+    --text-heading-2--font-weight: 400;
+
+    --text-heading-3: 35px;
+    --text-heading-3--line-height: 100%;
+    --text-heading-3--font-weight: 600;
+    --text-transform-3:uppercase;
+
+    --text-heading-4: 28px;
+    --text-heading-4--line-height: 140%;
+    --text-heading-4--font-weight: 600;
+    --text-transform-4:uppercase;
+
+    --text-heading-5: 22px;
+    --text-heading-5--line-height: 140%;
+    --text-heading-5--font-weight: 400;
+
+    --text-heading-5-bold: 22px;
+    --text-heading-5-bold--line-height: 140%;
+    --text-heading-5-bold--font-weight: 600;
+
+    --text-body: 18px;
+    --text-body--line-height: 140%;
+    --text-body--font-weight: 400;
+
+    --text-body-medium: 18px;
+    --text-body-medium--line-height: 150%;
+    --text-body-medium--font-weight: 500;
+
+    --text-body-bold: 18px;
+    --text-body-bold--line-height: 120%;
+    --text-body-bold--font-weight: 800;
+    --text-body-bold-transform:uppercase;
+
+    --text-caption: 15px;
+    --text-caption--line-height: 140%;
+    --text-caption--font-weight: 400;
+
+    --text-caption-bold: 16px;
+    --text-caption-bold--line-height: 150%;
+    --text-caption-bold--font-weight: 600;
+
+}
+
+@layer base {
+    :root { color-scheme: light; }
+
+    html, body {
+        font-family: var(--font-manrope), sans-serif;
+        background-color: var(--color-light-100);
+        color: var(--color-dark-700);
+    }
+}
+
+@layer utilities {
+
+    .title{
+        font-family: var(--font-raleway), sans-serif;
+        font-size: var(--text-title);
+        line-height: var(--text-title--line-height);
+        font-weight: var(--text-title--font-weight);
+        text-transform: var(--text-title-transform);
+    }
+
+
+    .h1 {
+        font-family: var(--font-raleway), sans-serif;
+        font-size: var(--text-heading-1);
+        line-height: var(--text-heading-1--line-height);
+        font-weight: var(--text-heading-1--font-weight);
+        text-transform: var(--text-transform-1);
+    }
+
+
+    .h2 {
+        font-family: var(--font-raleway), sans-serif;
+        font-size: var(--text-heading-2);
+        line-height: var(--text-heading-2--line-height);
+        font-weight: var(--text-heading-2--font-weight);
+    }
+
+
+    .h3 {
+        font-family: var(--font-raleway), sans-serif;
+        font-size: var(--text-heading-3);
+        line-height: var(--text-heading-3--line-height);
+        font-weight: var(--text-heading-3--font-weight);
+        text-transform: var(--text-transform-3);
+    }
+
+    .h4 {
+        font-family: var(--font-manrope), sans-serif;
+        font-size: var(--text-heading-4);
+        line-height: var(--text-heading-4--line-height);
+        font-weight: var(--text-heading-4--font-weight);
+        text-transform: var(--text-transform-4);
+    }
+
+    .h5 {
+        font-family: var(--font-manrope), sans-serif;
+        font-size: var(--text-heading-5);
+        line-height: var(--text-heading-5--line-height);
+        font-weight: var(--text-heading-5--font-weight);
+    }
+
+    .h5-bold {
+        font-family: var(--font-manrope), sans-serif;
+        font-size: var(--text-heading-5-bold);
+        line-height: var(--text-heading-5-bold--line-height);
+        font-weight: var(--text-heading-5-bold--font-weight);
+    }
+
+    .body {
+        font-family: var(--font-raleway), sans-serif;
+        font-size: var(--text-body);
+        line-height: var(--text-body--line-height);
+        font-weight: var(--text-body--font-weight);
+    }
+
+    .body-medium {
+        font-family: var(--font-raleway), sans-serif;
+        font-size: var(--text-body-medium);
+        line-height: var(--text-body-medium--line-height);
+        font-weight: var(--text-body-medium--font-weight);
+    }
+
+    .body-bold {
+        font-family: var(--font-manrope), sans-serif;
+        font-size: var(--text-body-bold);
+        line-height: var(--text-body-bold--line-height);
+        font-weight: var(--text-body-bold--font-weight);
+        text-transform: var(--text-body-bold-transform);
+    }
+
+    .caption {
+        font-family: var(--font-raleway), sans-serif;
+        font-size: var(--text-caption);
+        line-height: var(--text-caption--line-height);
+        font-weight: var(--text-caption--font-weight);
+    }
+
+    .caption-bold {
+        font-family: var(--font-raleway), sans-serif;
+        font-size: var(--text-caption-bold);
+        line-height: var(--text-caption-bold--line-height);
+        font-weight: var(--text-caption-bold--font-weight);
+    }
+}
+
+@layer theme {
+    --color-text: var(--color-green-700);
+    --color-title: var(--color-dark-700);
+    --color-bg: var(--color-light-100);
+}
+
+
