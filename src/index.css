@@ -67,7 +67,7 @@
 
     --text-caption: 15px;
     --text-caption--line-height: 140%;
-    --text-caption--font-weight: 400;
+    --text-caption--font-weight: 500;
 
     --text-caption-bold: 16px;
     --text-caption-bold--line-height: 150%;
@@ -86,7 +86,6 @@
 }
 
 @layer utilities {
-
     .title{
         font-family: var(--font-raleway), sans-serif;
         font-size: var(--text-title);
@@ -180,10 +179,67 @@
     }
 }
 
-@layer theme {
-    --color-text: var(--color-green-700);
-    --color-title: var(--color-dark-700);
-    --color-bg: var(--color-light-100);
+
+@layer components {
+
+    .btn-primary {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        gap: 10px;
+        padding: 12px 26px;
+        border: 1px solid var(--color-dark-700);
+        background: transparent;
+        color: var(--color-dark-700);
+    }
+
+    .btn-primary:hover {
+        background: var(--color-dark-700);
+        color: var(--color-light-100);
+    }
+
+    .btn-primary-disabled {
+        border: 1px solid var(--color-green-500);
+        color: var(--color-green-500);
+    }
+
+    .btn-primary-clicked {
+        border: 1px solid var(--color-dark-700);
+        color: var(--color-dark-700);
+    }
+
+    .btn-secondary {
+        display:flex;
+        flex-direction: column;
+        gap: 8px;
+        padding-bottom: 8px;
+        border-bottom: 2px solid var(--color-dark-700);
+        background: transparent;
+        color: var(--color-dark-700);
+    }
+
+    .btn-secondary:hover{
+        border-bottom: 2px solid var(--color-green-500);
+    }
+
+    .btn-secondary-disabled{
+        border: 1px solid var(--color-green-700);
+        color: var(--color-green-700);
+    }
+
+    .btn-secondary-clicked{
+        border: 1px solid var(--color-dark-700);
+        color: var(--color-dark-700);
+    }
 }
 
+@keyframes spin-logo {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+
+.rotate-logo {
+    transform-origin: 44px 44px;
+    animation: spin-logo 8s linear infinite;
+}
 
