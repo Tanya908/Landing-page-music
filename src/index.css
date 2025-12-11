@@ -23,26 +23,43 @@
     --text-title: 113px;
     --text-title--line-height: 85%;
     --text-title--font-weight: 400;
-    --text-title-transform:uppercase;
+
+    --text-mobile-title: 51px;
+    --text-mobile-title--line-height: 100%;
+    --text-mobile-title--font-weight: 500;
+    --text-mobile-title-transform:uppercase;
 
     --text-heading-1: 80px;
     --text-heading-1--line-height: 95%;
     --text-heading-1--font-weight: 500;
     --text-transform-1:uppercase;
 
+    --text-mobile-heading-1: 44px;
+    --text-mobile-heading-1--line-height: 95%;
+    --text-mobile-heading-1--font-weight: 500;
+    --text-mobile-transform-1:uppercase;
+
     --text-heading-2: 54px;
     --text-heading-2--line-height: 100%;
     --text-heading-2--font-weight: 400;
+
+    --text-mobile-heading-2: 38px;
+    --text-mobile-heading-2--line-height: 105%;
+    --text-mobile-heading-2--font-weight: 400;
 
     --text-heading-3: 35px;
     --text-heading-3--line-height: 100%;
     --text-heading-3--font-weight: 600;
     --text-transform-3:uppercase;
 
+    --text-mobile-heading-3: 32px;
+
     --text-heading-4: 28px;
     --text-heading-4--line-height: 140%;
     --text-heading-4--font-weight: 600;
     --text-transform-4:uppercase;
+
+    --text-mobile-heading-4: 28px;
 
     --text-heading-5: 22px;
     --text-heading-5--line-height: 140%;
@@ -67,9 +84,9 @@
 
     --text-caption: 15px;
     --text-caption--line-height: 140%;
-    --text-caption--font-weight: 500;
+    --text-caption--font-weight: 400;
 
-    --text-caption-bold: 16px;
+    --text-caption-bold: 15px;
     --text-caption-bold--line-height: 150%;
     --text-caption-bold--font-weight: 600;
 
@@ -85,161 +102,173 @@
     }
 }
 
-@layer utilities {
-    .title{
-        font-family: var(--font-raleway), sans-serif;
-        font-size: var(--text-title);
-        line-height: var(--text-title--line-height);
-        font-weight: var(--text-title--font-weight);
-        text-transform: var(--text-title-transform);
-    }
-
-
-    .h1 {
-        font-family: var(--font-raleway), sans-serif;
-        font-size: var(--text-heading-1);
-        line-height: var(--text-heading-1--line-height);
-        font-weight: var(--text-heading-1--font-weight);
-        text-transform: var(--text-transform-1);
-    }
-
-
-    .h2 {
-        font-family: var(--font-raleway), sans-serif;
-        font-size: var(--text-heading-2);
-        line-height: var(--text-heading-2--line-height);
-        font-weight: var(--text-heading-2--font-weight);
-    }
-
-
-    .h3 {
-        font-family: var(--font-raleway), sans-serif;
-        font-size: var(--text-heading-3);
-        line-height: var(--text-heading-3--line-height);
-        font-weight: var(--text-heading-3--font-weight);
-        text-transform: var(--text-transform-3);
-    }
-
-    .h4 {
-        font-family: var(--font-manrope), sans-serif;
-        font-size: var(--text-heading-4);
-        line-height: var(--text-heading-4--line-height);
-        font-weight: var(--text-heading-4--font-weight);
-        text-transform: var(--text-transform-4);
-    }
-
-    .h5 {
-        font-family: var(--font-manrope), sans-serif;
-        font-size: var(--text-heading-5);
-        line-height: var(--text-heading-5--line-height);
-        font-weight: var(--text-heading-5--font-weight);
-    }
-
-    .h5-bold {
-        font-family: var(--font-manrope), sans-serif;
-        font-size: var(--text-heading-5-bold);
-        line-height: var(--text-heading-5-bold--line-height);
-        font-weight: var(--text-heading-5-bold--font-weight);
-    }
-
-    .body {
-        font-family: var(--font-raleway), sans-serif;
-        font-size: var(--text-body);
-        line-height: var(--text-body--line-height);
-        font-weight: var(--text-body--font-weight);
-    }
-
-    .body-medium {
-        font-family: var(--font-raleway), sans-serif;
-        font-size: var(--text-body-medium);
-        line-height: var(--text-body-medium--line-height);
-        font-weight: var(--text-body-medium--font-weight);
-    }
-
-    .body-bold {
-        font-family: var(--font-manrope), sans-serif;
-        font-size: var(--text-body-bold);
-        line-height: var(--text-body-bold--line-height);
-        font-weight: var(--text-body-bold--font-weight);
-        text-transform: var(--text-body-bold-transform);
-    }
-
-    .caption {
-        font-family: var(--font-raleway), sans-serif;
-        font-size: var(--text-caption);
-        line-height: var(--text-caption--line-height);
-        font-weight: var(--text-caption--font-weight);
-    }
-
-    .caption-bold {
-        font-family: var(--font-raleway), sans-serif;
-        font-size: var(--text-caption-bold);
-        line-height: var(--text-caption-bold--line-height);
-        font-weight: var(--text-caption-bold--font-weight);
-    }
+@utility title {
+    font-family: var(--font-raleway), sans-serif;
+    font-size: var(--text-mobile-title);
+    line-height: var(--text-mobile-title--line-height);
+    font-weight: var(  --text-mobile-title--font-weight);
+    text-transform: var(--text-mobile-title-transform);
 }
 
 
-@layer components {
-
-    .btn-primary {
-        display: inline-flex;
-        align-items: center;
-        justify-content: center;
-        gap: 10px;
-        padding: 12px 26px;
-        border: 1px solid var(--color-dark-700);
-        background: transparent;
-        color: var(--color-dark-700);
+    @utility title {
+        @variant md {
+            font-size: var(--text-title);
+            line-height: var(--text-title--line-height);
+            font-weight: var(--text-title--font-weight);
+        }
     }
 
-    .btn-primary:hover {
-        background: var(--color-dark-700);
-        color: var(--color-light-100);
-    }
-
-    .btn-primary-disabled {
-        border: 1px solid var(--color-green-500);
-        color: var(--color-green-500);
-    }
-
-    .btn-primary-clicked {
-        border: 1px solid var(--color-dark-700);
-        color: var(--color-dark-700);
-    }
-
-    .btn-secondary {
-        display:flex;
-        flex-direction: column;
-        gap: 8px;
-        padding-bottom: 8px;
-        border-bottom: 2px solid var(--color-dark-700);
-        background: transparent;
-        color: var(--color-dark-700);
-    }
-
-    .btn-secondary:hover{
-        border-bottom: 2px solid var(--color-green-500);
-    }
-
-    .btn-secondary-disabled{
-        border: 1px solid var(--color-green-700);
-        color: var(--color-green-700);
-    }
-
-    .btn-secondary-clicked{
-        border: 1px solid var(--color-dark-700);
-        color: var(--color-dark-700);
-    }
+@utility h1 {
+    font-family: var(--font-raleway), sans-serif;
+    font-size: var(--text-heading-1);
+    line-height: var(--text-heading-1--line-height);
+    font-weight: var(--text-heading-1--font-weight);
+    text-transform: uppercase;
 }
 
-@keyframes spin-logo {
-    from { transform: rotate(0deg); }
-    to { transform: rotate(360deg); }
+@utility h2 {
+    font-family: var(--font-raleway), sans-serif;
+    font-size: var(--text-heading-2);
+    line-height: var(--text-heading-2--line-height);
+    font-weight: var(--text-heading-2--font-weight);
 }
 
-.rotate-logo {
-    transform-origin: 44px 44px;
-    animation: spin-logo 8s linear infinite;
+@utility h3 {
+    font-family: var(--font-raleway), sans-serif;
+    font-size: var(--text-heading-3);
+    line-height: var(--text-heading-3--line-height);
+    font-weight: var(--text-heading-3--font-weight);
+    text-transform: uppercase;
 }
+
+@utility h4 {
+    font-family: var(--font-manrope), sans-serif;
+    font-size: var(--text-heading-4);
+    line-height: var(--text-heading-4--line-height);
+    font-weight: var(--text-heading-4--font-weight);
+    text-transform: uppercase;
+}
+
+@utility h5 {
+    font-family: var(--font-manrope), sans-serif;
+    font-size: var(--text-heading-5);
+    line-height: var(--text-heading-5--line-height);
+    font-weight: var(--text-heading-5--font-weight);
+}
+
+@utility h5-bold {
+    font-family: var(--font-manrope), sans-serif;
+    font-size: var(--text-heading-5-bold);
+    line-height: var(--text-heading-5-bold--line-height);
+    font-weight: var(--text-heading-5-bold--font-weight);
+}
+
+@utility body {
+    font-family: var(--font-raleway), sans-serif;
+    font-size: var(--text-body);
+    line-height: var(--text-body--line-height);
+    font-weight: var(--text-body--font-weight);
+}
+
+@utility body-medium {
+    font-family: var(--font-raleway), sans-serif;
+    font-size: var(--text-body-medium);
+    line-height: var(--text-body-medium--line-height);
+    font-weight: var(--text-body-medium--font-weight);
+}
+
+@utility body-bold {
+    font-family: var(--font-manrope), sans-serif;
+    font-size: var(--text-body-bold);
+    line-height: var(--text-body-bold--line-height);
+    font-weight: var(--text-body-bold--font-weight);
+    text-transform: uppercase;
+}
+
+@utility caption {
+    font-family: var(--font-raleway), sans-serif;
+    font-size: var(--text-caption);
+    line-height: var(--text-caption--line-height);
+    font-weight: var(--text-caption--font-weight);
+}
+
+@utility caption-bold {
+    font-family: var(--font-raleway), sans-serif;
+    font-size: var(--text-caption-bold);
+    line-height: var(--text-caption-bold--line-height);
+    font-weight: var(--text-caption-bold--font-weight);
+}
+
+
+
+
+
+    @layer components {
+
+        .btn-primary {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            padding: 12px 26px;
+            border: 1px solid var(--color-dark-700);
+            background: transparent;
+            color: var(--color-dark-700);
+        }
+
+        .btn-primary:hover {
+            background: var(--color-dark-700);
+            color: var(--color-light-100);
+        }
+
+        .btn-primary-disabled {
+            border: 1px solid var(--color-green-500);
+            color: var(--color-green-500);
+        }
+
+        .btn-primary-clicked {
+            border: 1px solid var(--color-dark-700);
+            color: var(--color-dark-700);
+        }
+
+        .btn-secondary {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+            padding-bottom: 8px;
+            border-bottom: 2px solid var(--color-dark-700);
+            background: transparent;
+            color: var(--color-dark-700);
+        }
+
+        .btn-secondary:hover {
+            border-bottom: 2px solid var(--color-green-500);
+        }
+
+        .btn-secondary-disabled {
+            border: 1px solid var(--color-green-700);
+            color: var(--color-green-700);
+        }
+
+        .btn-secondary-clicked {
+            border: 1px solid var(--color-dark-700);
+            color: var(--color-dark-700);
+        }
+    }
+
+    @keyframes spin-logo {
+        from {
+            transform: rotate(0deg);
+        }
+        to {
+            transform: rotate(360deg);
+        }
+    }
+
+    .rotate-logo {
+        transform-origin: 44px 44px;
+        animation: spin-logo 8s linear infinite;
+    }
+
 
