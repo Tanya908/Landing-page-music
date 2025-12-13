@@ -29,15 +29,12 @@
     --text-mobile-title--font-weight: 500;
     --text-mobile-title-transform:uppercase;
 
-    --text-heading-1: 80px;
-    --text-heading-1--line-height: 95%;
-    --text-heading-1--font-weight: 500;
-    --text-transform-1:uppercase;
-
     --text-mobile-heading-1: 44px;
     --text-mobile-heading-1--line-height: 95%;
     --text-mobile-heading-1--font-weight: 500;
     --text-mobile-transform-1:uppercase;
+
+    --text-heading-1: 80px;
 
     --text-heading-2: 54px;
     --text-heading-2--line-height: 100%;
@@ -121,11 +118,18 @@
 
 @utility h1 {
     font-family: var(--font-raleway), sans-serif;
-    font-size: var(--text-heading-1);
-    line-height: var(--text-heading-1--line-height);
-    font-weight: var(--text-heading-1--font-weight);
-    text-transform: uppercase;
+    font-size: var(--text-mobile-heading-1);
+    line-height: var(--text-mobile-heading-1--line-height);
+    font-weight: var(--text-mobile-heading-1--font-weight);
+    text-transform: var(--text-mobile-transform-1);
 }
+
+    @utility h1 {
+        @variant md {
+            font-size: var(--text-heading-1);
+        }
+    }
+
 
 @utility h2 {
     font-family: var(--font-raleway), sans-serif;
@@ -204,60 +208,58 @@
 
 
 
-    @layer components {
+@layer components {
 
-        .btn-primary {
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            gap: 10px;
-            padding: 12px 26px;
-            border: 1px solid var(--color-dark-700);
-            background: transparent;
-            color: var(--color-dark-700);
-        }
-
-        .btn-primary:hover {
-            background: var(--color-dark-700);
-            color: var(--color-light-100);
-        }
-
-        .btn-primary-disabled {
-            border: 1px solid var(--color-green-500);
-            color: var(--color-green-500);
-        }
-
-        .btn-primary-clicked {
-            border: 1px solid var(--color-dark-700);
-            color: var(--color-dark-700);
-        }
-
-        .btn-secondary {
-            display: flex;
-            flex-direction: column;
-            gap: 8px;
-            padding-bottom: 8px;
-            border-bottom: 2px solid var(--color-dark-700);
-            background: transparent;
-            color: var(--color-dark-700);
-        }
-
-        .btn-secondary:hover {
-            border-bottom: 2px solid var(--color-green-500);
-        }
-
-        .btn-secondary-disabled {
-            border: 1px solid var(--color-green-700);
-            color: var(--color-green-700);
-        }
-
-        .btn-secondary-clicked {
-            border: 1px solid var(--color-dark-700);
-            color: var(--color-dark-700);
-        }
+    .btn-primary {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        gap: 10px;
+        padding: 12px 26px;
+        border: 1px solid var(--color-dark-700);
+        background: transparent;
+        color: var(--color-dark-700);
     }
 
-    @keyframes spin-logo {
+    .btn-primary:hover {
+        background: var(--color-dark-700);
+        color: var(--color-light-100);
+    }
+
+    .btn-primary-disabled {
+        border: 1px solid var(--color-green-500);
+        color: var(--color-green-500);
+    }
+
+    .btn-primary-clicked {
+        border: 1px solid var(--color-dark-700);
+        color: var(--color-dark-700);
+    }
+
+    .btn-secondary {
+        padding-bottom: 4px;
+        text-align: center;
+        border-bottom: 2px solid var(--color-dark-700);
+        color: var(--color-dark-700);
+    }
+
+    .btn-secondary:hover {
+        border-bottom: 2px solid var(--color-green-500);
+    }
+
+    .btn-secondary-disabled {
+        border: 1px solid var(--color-green-700);
+        color: var(--color-green-700);
+    }
+
+    .btn-secondary-clicked {
+        border: 1px solid var(--color-dark-700);
+        color: var(--color-dark-700);
+    }
+}
+
+
+@keyframes spin-logo {
         from {
             transform: rotate(0deg);
         }
