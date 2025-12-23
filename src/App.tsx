@@ -1,6 +1,7 @@
 import Header from "./components/Header.tsx";
 import Hero from "./components/Hero.tsx";
 import About from "./components/About.tsx";
+import Representation from "./components/Representation.tsx";
 
 
 
@@ -11,6 +12,7 @@ const App = () => {
             <Header/>
             <Hero/>
             <About/>
+            <Representation/>
             <div className="h-28"></div>
 
         </div>

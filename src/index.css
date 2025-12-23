@@ -51,12 +51,12 @@
 
     --text-mobile-heading-3: 32px;
 
-    --text-heading-4: 28px;
-    --text-heading-4--line-height: 140%;
-    --text-heading-4--font-weight: 600;
-    --text-transform-4:uppercase;
+    --text-mobile-heading-4: 26px;
+    --text-mobile-heading-4--line-height: 140%;
+    --text-mobile-heading-4--font-weight: 600;
+    --text-mobile-transform-4:uppercase;
 
-    --text-mobile-heading-4: 28px;
+    --text-heading-4: 28px;
 
     --text-heading-5: 22px;
     --text-heading-5--line-height: 140%;
@@ -148,11 +148,19 @@
 
 @utility h4 {
     font-family: var(--font-manrope), sans-serif;
-    font-size: var(--text-heading-4);
-    line-height: var(--text-heading-4--line-height);
-    font-weight: var(--text-heading-4--font-weight);
+    font-size: var(--text-mobile-heading-4);
+    line-height: var(--text-mobile-heading-4--line-height);
+    font-weight: var(--text-mobile-heading-4--font-weight);
     text-transform: uppercase;
 }
+
+    @utility h4 {
+        @variant md {
+            font-size: var(--text-heading-4);
+        }
+    }
+
+
 
 @utility h5 {
     font-family: var(--font-manrope), sans-serif;
