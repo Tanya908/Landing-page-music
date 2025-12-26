@@ -2,6 +2,7 @@ import Header from "./components/Header.tsx";
 import Hero from "./components/Hero.tsx";
 import About from "./components/About.tsx";
 import Representation from "./components/Representation.tsx";
+import WhatWeDo from "./components/WhatWeDo.tsx";
 
 
 
@@ -13,7 +14,7 @@ const App = () => {
             <Hero/>
             <About/>
             <Representation/>
-            <div className="h-28"></div>
+            <WhatWeDo/>
 
         </div>
     )
