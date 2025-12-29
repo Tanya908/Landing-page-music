@@ -3,6 +3,7 @@ import Hero from "./components/Hero.tsx";
 import About from "./components/About.tsx";
 import Representation from "./components/Representation.tsx";
 import WhatWeDo from "./components/WhatWeDo.tsx";
+import PastCollabs from "./components/PastCollabs.tsx";
 
 
 
@@ -15,6 +16,11 @@ const App = () => {
             <About/>
             <Representation/>
             <WhatWeDo/>
+            <PastCollabs/>
+            <div className="h-80"></div>
+            <div className="h-80"></div>
+            <div className="h-80"></div>
+            <div className="h-80"></div>
 
         </div>
     )
