@@ -44,12 +44,12 @@
     --text-mobile-heading-2--line-height: 105%;
     --text-mobile-heading-2--font-weight: 400;
 
-    --text-heading-3: 35px;
-    --text-heading-3--line-height: 100%;
-    --text-heading-3--font-weight: 600;
-    --text-transform-3:uppercase;
-
     --text-mobile-heading-3: 32px;
+    --text-mobile-heading-3--line-height: 100%;
+    --text-mobile-heading-3--font-weight: 600;
+    --text-mobile-transform-3:uppercase;
+
+    --text-heading-3: 35px;
 
     --text-mobile-heading-4: 26px;
     --text-mobile-heading-4--line-height: 140%;
@@ -140,11 +140,18 @@
 
 @utility h3 {
     font-family: var(--font-raleway), sans-serif;
-    font-size: var(--text-heading-3);
-    line-height: var(--text-heading-3--line-height);
-    font-weight: var(--text-heading-3--font-weight);
-    text-transform: uppercase;
+    font-size: var(--text-mobile-heading-3);
+    line-height: var(--text-mobile-heading-3--line-height);
+    font-weight: var(--text-mobile-heading-3--font-weight);
+    text-transform: var(--text-mobile-transform-3);
 }
+
+    @utility h3 {
+        @variant md {
+            font-size: var(--text-heading-3);
+        }
+    }
+
 
 @utility h4 {
     font-family: var(--font-manrope), sans-serif;
@@ -263,6 +270,25 @@
     .btn-secondary-clicked {
         border: 1px solid var(--color-dark-700);
         color: var(--color-dark-700);
+    }
+
+    .form-field {
+        padding-left: 8px;
+        padding-bottom: 24px;
+        border: none;
+        border-bottom: 1px solid var(--color-dark-700);
+        background: transparent;
+        color: var(--color-green-700);
+        outline: none;
+    }
+
+    .form-field::placeholder {
+        color: var(--color-green-700);
+    }
+
+    .form-field:focus {
+        border-bottom: 1px solid var(--color-dark-700);
+        outline: none;
     }
 }
 
