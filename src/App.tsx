@@ -5,6 +5,7 @@ import Representation from "./components/Representation.tsx";
 import WhatWeDo from "./components/WhatWeDo.tsx";
 import PastCollabs from "./components/PastCollabs.tsx";
 import Contact from "./components/Contact.tsx";
+import Footer from "./components/Footer.tsx";
 
 
 
@@ -19,6 +20,7 @@ const App = () => {
             <WhatWeDo/>
             <PastCollabs/>
             <Contact/>
+            <Footer/>
         </div>
     )
 }

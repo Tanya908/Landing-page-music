@@ -36,13 +36,11 @@
 
     --text-heading-1: 80px;
 
-    --text-heading-2: 54px;
-    --text-heading-2--line-height: 100%;
-    --text-heading-2--font-weight: 400;
-
-    --text-mobile-heading-2: 38px;
+    --text-mobile-heading-2: 32px;
     --text-mobile-heading-2--line-height: 105%;
     --text-mobile-heading-2--font-weight: 400;
+
+    --text-heading-2: 54px;
 
     --text-mobile-heading-3: 32px;
     --text-mobile-heading-3--line-height: 100%;
@@ -133,10 +131,16 @@
 
 @utility h2 {
     font-family: var(--font-raleway), sans-serif;
-    font-size: var(--text-heading-2);
-    line-height: var(--text-heading-2--line-height);
-    font-weight: var(--text-heading-2--font-weight);
+    font-size: var(--text-mobile-heading-2);
+    line-height: var(--text-mobile-heading-2--line-height);
+    font-weight: var(--text-mobile-heading-2--font-weight);
 }
+
+    @utility h2 {
+        @variant md {
+            font-size: var(--text-heading-2);
+        }
+    }
 
 @utility h3 {
     font-family: var(--font-raleway), sans-serif;

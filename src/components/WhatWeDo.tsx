@@ -15,7 +15,7 @@ const WhatWeDoItems:WhatWeDoItem[] =[
 
 const WhatWeDo = () => {
     return (
-        <section className="mt-20 md:mt-24">
+        <section id="what-we-do" className="mt-20 md:mt-24">
             <div className="flex flex-col md:flex-row justify-between gap-10 mb-14">
                 <h2 className="h1 lg:w-2/3">Five ways we help brands <span className="text-[var(--color-green-300)]">be heard</span> </h2>
                 <div className="flex items-end ">
