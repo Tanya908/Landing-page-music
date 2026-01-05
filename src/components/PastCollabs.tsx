@@ -40,7 +40,7 @@ const CollabsLogos:CollabsLogo[] =[
 
 const PastCollabs = () => {
     return (
-        <section className="relative mt-20 flex flex-col md:flex-row md:items-start md:justify-between gap-8">
+        <section className="relative mt-28 flex flex-col md:flex-row md:items-start md:justify-between gap-8">
             <div className="flex flex-col items-center md:items-start justify-center gap-6 md:w-1/2 lg:w-96 ">
                 <h4 className="h4 text-center md:text-left  max-w-full ">Past Collaborations</h4>
                 <p className="caption text-center md:text-left text-[var(--color-green-700)] mb-14">We compose and license music with cultural relevance and human connection at the core, built on our founder's experience working with global and local brands.</p>

@@ -13,7 +13,7 @@ const CardItems:CardItem[] = [
 
 const Representation = () => {
     return (
-        <section id="representation" className="mt-20">
+        <section id="representation" className="mt-28">
             <p className="caption text-[var(--color-green-700)] text-center mb-4 ">
                 Representation isn’t a trend. It’s our standard
             </p>

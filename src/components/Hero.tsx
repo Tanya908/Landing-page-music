@@ -1,5 +1,6 @@
 import { useState } from "react";
 import VideoCard from "./VideoCard";
+import SliderArrowButton from "./SliderButton.tsx";
 
 const videos: string[] = [
     "1131395722",
@@ -26,18 +27,21 @@ const Hero = () => {
     const [index, setIndex] = useState(0);
     const [activeVideo, setActiveVideo] = useState<string | null>(null);
 
-    const next = () => {
-        setActiveVideo(null);
-        setIndex((prev) => (prev === videos.length - 1 ? 0 : prev + 1));
-    };
+    const isPrevDisabled = index === 0;
+    const isNextDisabled = index === videos.length - 1;
 
     const prev = () => {
         setActiveVideo(null);
-        setIndex((prev) => (prev === 0 ? videos.length - 1 : prev - 1));
+        setIndex((prev) => Math.max(prev - 1, 0));
+    };
+
+    const next = () => {
+        setActiveVideo(null);
+        setIndex((prev) => Math.min(prev + 1, videos.length - 1));
     };
 
     return (
-        <section className="mb-20">
+        <section className="mb-28">
             <div className="flex flex-col gap-8 md:flex-row">
                 <h1 className="title lg:basis-[70%]">Music that moves culture</h1>
 
@@ -75,13 +79,17 @@ const Hero = () => {
                 </p>
 
                 <div className="flex gap-6 md:self-end mt-8 md:mt-0">
-                    <button onClick={prev} className="w-14 h-14 bg-[var(--color-dark-900)] flex items-center justify-center">
-                        <img src="/arrow.svg" alt="left arrow" className="h-3.5 w-3.5" />
-                    </button>
+                    <SliderArrowButton
+                        direction="left"
+                        disabled={isPrevDisabled}
+                        onClick={prev}
+                    />
 
-                    <button onClick={next} className="w-14 h-14 bg-[var(--color-dark-900)] flex items-center justify-center">
-                        <img src="/arrow.svg" alt="right arrow" className="h-3.5 w-3.5 rotate-180" />
-                    </button>
+                    <SliderArrowButton
+                        direction="right"
+                        disabled={isNextDisabled}
+                        onClick={next}
+                    />
                 </div>
             </div>
         </section>
