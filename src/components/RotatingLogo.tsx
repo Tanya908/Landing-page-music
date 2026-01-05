@@ -3,9 +3,9 @@ type RotatingLogoProps = {
     size?: number;
 };
 
-const RotatingLogo = ({ color = "#151717",size = 48 }: RotatingLogoProps) => {
+const RotatingLogo = ({ color = "#151717",size = 56 }: RotatingLogoProps) => {
     return (
-        <div className="h-12 w-12 md:h-24 md:w-24 lg:w-28 lg:h-28"
+        <div
              style={{ width: size,
                  height: size,
                  color, }}
