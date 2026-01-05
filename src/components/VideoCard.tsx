@@ -1,16 +1,21 @@
 "use client";
 
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 
-interface Props {
+type VideoCardProps = {
     videos: string[];
     index: number;
-    activeVideo: string | null;
-    setActiveVideo: (url: string | null) => void;
-}
+    activeVideo: string | null; // зберігаємо ID
+    setActiveVideo: (id: string | null) => void;
+};
 
-const VideoCard: React.FC<Props> = ({ videos, index, activeVideo, setActiveVideo }) => {
-    const [width, setWidth] = useState(0);
+const VideoCard = ({
+                       videos,
+                       index,
+                       activeVideo,
+                       setActiveVideo,
+                   }: VideoCardProps) => {
+    const [width, setWidth] = useState<number>(0);
 
     useEffect(() => {
         const update = () => setWidth(window.innerWidth);
@@ -26,43 +31,38 @@ const VideoCard: React.FC<Props> = ({ videos, index, activeVideo, setActiveVideo
         return `-${index * 100}%`;
     };
 
-    const startVideo = (id: string) => {
-        setActiveVideo(`https://player.vimeo.com/video/${id}?autoplay=1&controls=1`);
-    };
-
     return (
         <div className="w-full flex flex-col items-center mt-10">
-            <div className="w-full overflow-hidden px-0">
+            <div className="w-full overflow-hidden">
                 <div
                     className="flex transition-transform duration-500 ease-out"
                     style={{ transform: `translateX(${getTranslateValue()})` }}
                 >
-                    {videos.map((id, i) => {
-                        const isActive = activeVideo?.includes(id);
+                    {videos.map((id) => {
+                        const isActive = activeVideo === id;
 
                         return (
                             <div
-                                key={i}
+                                key={id}
                                 className="flex-shrink-0 w-full md:w-[94%] lg:w-[80%] xl:w-[75%] pr-4"
                             >
                                 <div className="relative aspect-video w-full overflow-hidden bg-black">
-
                                     <iframe
                                         src={
                                             isActive
-                                                ? activeVideo!
+                                                ? `https://player.vimeo.com/video/${id}?autoplay=1&controls=1`
                                                 : `https://player.vimeo.com/video/${id}?controls=0`
                                         }
                                         className="absolute inset-0 w-full h-full"
                                         allow="autoplay; fullscreen"
                                     />
 
-                                    {!isActive && index === i && (
+                                    {!isActive && (
                                         <button
-                                            onClick={() => startVideo(id)}
+                                            onClick={() => setActiveVideo(id)}
                                             className="absolute inset-0 m-auto z-50 h-20 w-20 bg-white rounded-full flex items-center justify-center"
                                         >
-                                            <img src="/play.svg" className="h-6 w-6" />
+                                            <img src="/play.svg" alt="Play video" className="h-6 w-6" />
                                         </button>
                                     )}
                                 </div>

@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-const options = [
+const options:string[] = [
     "Music Trend Reports + Cultural Compass",
     "Music Searches & Licensing",
     "Bespoke Composition",
@@ -10,7 +10,7 @@ const options = [
 
 const Contact = () => {
     const [open, setOpen] = useState(false);
-    const [value, setValue] = useState("Services needed");
+    const [value, setValue] = useState<string>("Services needed");
 
     return (
         <section
@@ -42,7 +42,7 @@ const Contact = () => {
                                 </button>
 
                                 {open && (
-                                    <ul className=" absolute z-50 w-full bg-[var(--color-light-100)] text-[var(--color-dark-700)]"
+                                    <ul className=" absolute z-50 w-full bg-[var(--color-light-100)]"
                                     >
                                         {options.map((option) => (
                                             <li
@@ -51,7 +51,7 @@ const Contact = () => {
                                                     setValue(option);
                                                     setOpen(false);
                                                 }}
-                                                className={`body text-[var(--color-dark-700)]  cursor-pointer px-4 py-4  transition border-b border-[var(--color-light-200)]
+                                                className={`body cursor-pointer px-4 py-4 transition border-b border-[var(--color-light-200)]
                                                  hover:bg-[var(--color-dark-700)] hover:text-[var(--color-light-200)]                                         
                                                 `}
                                             >
@@ -84,7 +84,7 @@ const Contact = () => {
                                 />
                                 </span>
 
-                                <span className="caption text-left text-[var(--color-dark-700)]">
+                                <span className="caption text-left">
                                     We’ll only use your details to respond to your enquiry.
                                 </span>
                             </label>

@@ -1,7 +1,7 @@
 import { useState } from "react";
 import VideoCard from "./VideoCard";
 
-const videos = [
+const videos: string[] = [
     "1131395722",
     "1098230535",
     "1119041209",
@@ -10,7 +10,12 @@ const videos = [
     "1098230002",
 ];
 
-const ServiceItems = [
+type ServiceItem = {
+    title: string;
+    text: string;
+};
+
+const ServiceItems:ServiceItem[] = [
     { text: "We find and license the perfect track", title: "Music Supervision" },
     { text: "We craft the perfect soundtrack", title: "Composition & Re-Records" },
     { text: "We turn scene data into choices", title: "Cultural Insights" },
@@ -45,11 +50,11 @@ const Hero = () => {
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-6 mt-11">
-                {ServiceItems.map((item, i) => (
-                    <div key={i} className="flex flex-col">
-                        <p className="caption text-[var(--color-green-700)] whitespace-nowrap">{item.text}</p>
+                {ServiceItems.map((item) => (
+                    <div key={item.title} className="flex flex-col">
+                        <p className="caption text-[var(--color-green-700)] max-w-full">{item.text}</p>
                         <div className="h-px w-full bg-[var(--color-dark-700)] my-2"></div>
-                        <h3 className="caption-bold uppercase text-[var(--color-dark-700)]">{item.title}</h3>
+                        <h3 className="caption-bold uppercase">{item.title}</h3>
                     </div>
                 ))}
             </div>
@@ -70,11 +75,11 @@ const Hero = () => {
                 </p>
 
                 <div className="flex gap-6 md:self-end mt-8 md:mt-0">
-                    <button onClick={prev} className="w-14 h-14 bg-black text-white flex items-center justify-center">
+                    <button onClick={prev} className="w-14 h-14 bg-[var(--color-dark-900)] flex items-center justify-center">
                         <img src="/arrow.svg" alt="left arrow" className="h-3.5 w-3.5" />
                     </button>
 
-                    <button onClick={next} className="w-14 h-14 bg-black text-white flex items-center justify-center">
+                    <button onClick={next} className="w-14 h-14 bg-[var(--color-dark-900)] flex items-center justify-center">
                         <img src="/arrow.svg" alt="right arrow" className="h-3.5 w-3.5 rotate-180" />
                     </button>
                 </div>

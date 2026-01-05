@@ -1,4 +1,4 @@
-interface WhatWeDoItem {
+type WhatWeDoItem = {
     id: number;
     img: string;
     title: string;
@@ -20,7 +20,7 @@ const WhatWeDo = () => {
                 <h2 className="h1 lg:w-2/3">Five ways we help brands <span className="text-[var(--color-green-300)]">be heard</span> </h2>
                 <div className="flex items-end ">
                     <a
-                        href="#"
+                        href="#contact"
                         className="w-full md:w-auto btn-primary text-caption uppercase whitespace-nowrap"
                     >
                         Contact Us
@@ -36,7 +36,7 @@ const WhatWeDo = () => {
                                     grid grid-cols-1 gap-6 md:grid-cols-[7fr_3fr] md:gap-8 lg:gap-10"
                     >
 
-                        <div className=" grid grid-cols-1 gap-3 lg:grid-cols-[160px_160px_minmax(0,480px)] lg:gap-x-6" >
+                        <div className="grid grid-cols-1 gap-3 lg:grid-cols-[160px_160px_minmax(0,480px)] lg:gap-x-6" >
                             <div
                                 className="w-8 h-8 rounded-full bg-[var(--color-green-300)]
                                            flex items-center justify-center text-[var(--color-light-100)] "

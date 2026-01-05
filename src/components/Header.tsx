@@ -75,7 +75,7 @@ const Header = () => {
                             <a
                                 key={item.id}
                                 href={item.url}
-                                className=" h5 lg:body w-full text-center capitalize text-[var(--color-dark-700)] hover:text-[var(--color-green-300)] lg:w-auto whitespace-nowrap "
+                                className=" h5 lg:body w-full text-center capitalize hover:text-[var(--color-green-300)] lg:w-auto whitespace-nowrap "
                                 onClick={closeMenu}
                             >
                                 {item.title}

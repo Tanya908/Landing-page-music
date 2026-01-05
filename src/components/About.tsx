@@ -1,4 +1,9 @@
-const AboutItems = [
+type AboutItem = {
+    title: string;
+    text: string;
+};
+
+const AboutItems: AboutItem[] = [
     { text: "Decisions grounded in real scenes and communities", title: "Culture-first" },
     { text: "From trend analysis to stems and cutdowns", title: "Detail-obsessed" },
     { text: "Representation in talent, sound and origin", title: "Inclusive by default" },
@@ -26,10 +31,10 @@ const About = () => {
                 </p>
 
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                    {AboutItems.map((item, i) => (
-                        <div key={i} className="flex flex-col">
+                    {AboutItems.map((item) => (
+                        <div key={item.title} className="flex flex-col">
                             <div className="h-px w-full bg-[var(--color-dark-700)] my-2"></div>
-                            <h3 className="caption-bold uppercase text-[var(--color-dark-700)] pt-6">
+                            <h3 className="caption-bold uppercase pt-6">
                                 {item.title}
                             </h3>
                             <p className="body text-[var(--color-green-700)] mb-6 md:mb-10">
@@ -40,7 +45,7 @@ const About = () => {
                 </div>
 
                 <div className="flex justify-center lg:justify-start mt-auto">
-                    <a href="" className="btn-secondary body-medium text-[var(--color-dark-700)]">
+                    <a href="#representation" className="btn-secondary body-medium">
                         Our Approach
                     </a>
                 </div>
