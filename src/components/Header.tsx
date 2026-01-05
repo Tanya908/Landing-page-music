@@ -27,11 +27,9 @@ const Header = () => {
     return (
         <header className="w-full z-50 bg-[var(--color-light-100)] relative">
             <div className="flex flex-col gap-6 py-6 lg:grid lg:grid-cols-3 lg:items-center lg:gap-10">
-
                 <div className="flex items-center justify-between lg:hidden w-full">
-                    <a href="/" aria-label="Free Rien home">
                         <RotatingLogo />
-                    </a>
+
 
                     <div className="flex items-center gap-4">
                         <a

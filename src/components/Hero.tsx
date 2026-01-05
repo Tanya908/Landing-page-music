@@ -32,7 +32,7 @@ const Hero = () => {
     };
 
     return (
-        <div className="mb-20">
+        <section className="mb-20">
             <div className="flex flex-col gap-8 md:flex-row">
                 <h1 className="title lg:basis-[70%]">Music that moves culture</h1>
 
@@ -79,7 +79,7 @@ const Hero = () => {
                     </button>
                 </div>
             </div>
-        </div>
+        </section>
     );
 };
 

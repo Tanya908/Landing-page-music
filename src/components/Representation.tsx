@@ -34,11 +34,9 @@ const Representation = () => {
                         <img src={item.img} alt={`${item.title} icon`} />
                         <p className="h5 text-[var(--color-green-700)]">{item.description}</p>
 
-
                         {i !== CardItems.length - 1 && (
                             <div className="block md:hidden w-full h-px bg-[var(--color-green-100)]"></div>
                         )}
-
 
                         {i < CardItems.length - 1 && (
                             <div className="hidden md:block bg-[var(--color-green-100)] w-px absolute right-0 top-[32px] bottom-[32px]"></div>

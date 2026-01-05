@@ -17,7 +17,6 @@ const Footer = () => {
     return (
         <section className="mt-20">
             <div className="relative w-screen left-1/2 -translate-x-1/2 bg-[var(--color-dark-700)] px-4 py-16">
-
                 <div className="grid grid-cols-1 md:grid-cols-[1fr_auto] gap-12 items-start">
                     <div className="flex flex-col order-1">
                         <h5 className="h5-bold uppercase text-[var(--color-light-100)] ">
@@ -35,7 +34,6 @@ const Footer = () => {
                 </div>
 
                 <div className="grid grid-cols-1 md:grid-cols-[auto_1fr] gap-10 mt-16 items-center">
-
                     <div className="flex flex-col md:flex-row md:items-center gap-2 md:gap-6">
                         <a
                             href="mailto:hello@freereinmusic.com"

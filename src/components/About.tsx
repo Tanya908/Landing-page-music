@@ -7,8 +7,7 @@ const AboutItems = [
 
 const About = () => {
     return (
-        <div id="about" className="grid grid-cols-1 lg:grid-cols-2 gap-6  ">
-
+        <section id="about" className="grid grid-cols-1 lg:grid-cols-2 gap-6  ">
             <div className="flex flex-col h-full">
                 <div className="flex gap-4 items-center">
                     <img src="/arrowText.svg" className="h-3 w-4" alt="arrow" />
@@ -54,12 +53,7 @@ const About = () => {
                     className="w-full h-full object-cover "
                 />
             </div>
-
-
-
-
-        </div>
-
+        </section>
     )
 }
 export default About

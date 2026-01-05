@@ -10,7 +10,6 @@ const RotatingLogo = ({ color = "#151717",size = 56 }: RotatingLogoProps) => {
                  height: size,
                  color, }}
         >
-
             <svg
                 className="w-full h-full animate-rotate"
                 viewBox="0 0 88 88"
@@ -49,13 +48,7 @@ const RotatingLogo = ({ color = "#151717",size = 56 }: RotatingLogoProps) => {
                     }
                 `}
             </style>
-
         </div>
-
-
-
-
-
     );
 };
 

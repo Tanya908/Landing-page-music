@@ -26,7 +26,6 @@ const VideoCard: React.FC<Props> = ({ videos, index, activeVideo, setActiveVideo
         return `-${index * 100}%`;
     };
 
-
     const startVideo = (id: string) => {
         setActiveVideo(`https://player.vimeo.com/video/${id}?autoplay=1&controls=1`);
     };
