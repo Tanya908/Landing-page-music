@@ -224,9 +224,6 @@
 }
 
 
-
-
-
 @layer components {
 
     .btn-primary {
@@ -235,9 +232,17 @@
         justify-content: center;
         gap: 10px;
         padding: 12px 26px;
+        white-space: nowrap;
+        text-transform: uppercase;
+
         border: 1px solid var(--color-dark-700);
         background: transparent;
         color: var(--color-dark-700);
+
+        transition:
+                background 0.25s ease,
+                color 0.25s ease,
+                transform 0.12s ease;
     }
 
     .btn-primary:hover {
@@ -245,35 +250,44 @@
         color: var(--color-light-100);
     }
 
+    .btn-primary:active {
+        background: transparent;
+        color: var(--color-dark-700);
+        transform: scale(0.97);
+    }
+
     .btn-primary-disabled {
         border: 1px solid var(--color-green-500);
         color: var(--color-green-500);
-    }
-
-    .btn-primary-clicked {
-        border: 1px solid var(--color-dark-700);
-        color: var(--color-dark-700);
+        cursor: not-allowed;
+        pointer-events: none;
+        background: transparent;
     }
 
     .btn-secondary {
-        padding-bottom: 4px;
-        text-align: center;
+        padding: 0 8px 6px;
         border-bottom: 2px solid var(--color-dark-700);
         color: var(--color-dark-700);
+        transition:
+                border-color 0.25s ease,
+                color 0.25s ease,
+                transform 0.12s ease;
     }
 
     .btn-secondary:hover {
-        border-bottom: 2px solid var(--color-green-500);
+        border-bottom-color: var(--color-green-500);
+    }
+
+    .btn-secondary:active {
+        transform: translateY(1px);
+        border-bottom-color: var(--color-dark-700);
     }
 
     .btn-secondary-disabled {
-        border: 1px solid var(--color-green-700);
+        border-bottom: 2px solid var(--color-green-700);
         color: var(--color-green-700);
-    }
-
-    .btn-secondary-clicked {
-        border: 1px solid var(--color-dark-700);
-        color: var(--color-dark-700);
+        pointer-events: none;
+        cursor: not-allowed;
     }
 
     .form-field {

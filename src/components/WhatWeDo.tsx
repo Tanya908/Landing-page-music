@@ -1,3 +1,5 @@
+import Button from "./Button.tsx";
+
 type WhatWeDoItem = {
     id: number;
     img: string;
@@ -21,10 +23,16 @@ const WhatWeDo = () => {
                 <div className="flex items-end ">
                     <a
                         href="#contact"
-                        className="w-full md:w-auto btn-primary text-caption uppercase whitespace-nowrap"
+                        className=""
                     >
-                        Contact Us
+
                     </a>
+
+
+                    <Button href="#contact" variant="primary" className="w-full md:w-auto text-caption">
+                        Contact Us
+                    </Button>
+
                 </div>
             </div>
 

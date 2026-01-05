@@ -3,6 +3,7 @@
 import { useState } from "react";
 import { Burger } from "./Burger";
 import RotatingLogo from "./RotatingLogo";
+import Button from "./Button.tsx";
 
 type NavLink = { id: number; title: string; url: `#${string}` };
 
@@ -29,16 +30,10 @@ const Header = () => {
             <div className="flex flex-col gap-6 py-6 lg:grid lg:grid-cols-3 lg:items-center lg:gap-10">
                 <div className="flex items-center justify-between lg:hidden w-full">
                         <RotatingLogo />
-
-
                     <div className="flex items-center gap-4">
-                        <a
-                            href="#contact"
-                            className="hidden md:flex btn-primary text-caption uppercase whitespace-nowrap"
-                            onClick={closeMenu}
-                        >
+                        <Button href="#contact" variant="primary" onClick={closeMenu} className="hidden md:flex">
                             brief us
-                        </a>
+                        </Button>
 
                         <Burger
                             open={openNavigation}

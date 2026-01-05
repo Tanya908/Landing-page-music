@@ -1,3 +1,5 @@
+import Button from "./Button.tsx";
+
 type AboutItem = {
     title: string;
     text: string;
@@ -45,9 +47,9 @@ const About = () => {
                 </div>
 
                 <div className="flex justify-center lg:justify-start mt-auto">
-                    <a href="#representation" className="btn-secondary body-medium">
+                    <Button href="#representation" variant="secondary" className="body-medium">
                         Our Approach
-                    </a>
+                    </Button>
                 </div>
             </div>
 
