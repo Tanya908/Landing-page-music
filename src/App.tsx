@@ -8,20 +8,20 @@ import Contact from "./components/Contact.tsx";
 import Footer from "./components/Footer.tsx";
 
 
-
-
 const App = () => {
     return (
-        <div className="max-w-[1600px] mx-auto px-4 md:px-8 lg:px-10">
-            <Header/>
-            <Hero/>
-            <About/>
-            <Representation/>
-            <WhatWeDo/>
-            <PastCollabs/>
+        <>
+            <div className="max-w-[1600px] mx-auto px-4 md:px-8 lg:px-10">
+                <Header/>
+                <Hero/>
+                <About/>
+                <Representation/>
+                <WhatWeDo/>
+                <PastCollabs/>
+            </div>
             <Contact/>
             <Footer/>
-        </div>
+        </>
     )
 }
 export default App

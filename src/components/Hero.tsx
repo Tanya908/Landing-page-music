@@ -54,7 +54,7 @@ const Hero = () => {
                 ))}
             </div>
 
-            <div className="w-screen relative left-1/2 right-1/2 -ml-[50vw] -mr-[50vw]">
+            <div className="relative -mr-4 md:-mr-8 lg:-mr-10 mt-10">
                 <VideoCard
                     videos={videos}
                     index={index}

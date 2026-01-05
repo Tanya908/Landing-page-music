@@ -15,7 +15,7 @@ const Contact = () => {
     return (
         <section
             id="contact"
-            className="relative w-screen bg-cover bg-center left-1/2 -translate-x-1/2 mt-20"
+            className="w-full bg-cover bg-center mt-20 overflow-x-hidden"
             style={{ backgroundImage: "url('/contact.png')" }}
         >
             <div className="flex justify-center gap-4 px-4 py-14 md:py-10 md:px-14">

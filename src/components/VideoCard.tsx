@@ -32,7 +32,7 @@ const VideoCard: React.FC<Props> = ({ videos, index, activeVideo, setActiveVideo
 
     return (
         <div className="w-full flex flex-col items-center mt-10">
-            <div className="w-full overflow-hidden ml-4 md:ml-10 lg:ml-14">
+            <div className="w-full overflow-hidden px-0">
                 <div
                     className="flex transition-transform duration-500 ease-out"
                     style={{ transform: `translateX(${getTranslateValue()})` }}
