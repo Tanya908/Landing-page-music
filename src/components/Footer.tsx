@@ -1,19 +1,24 @@
+"use client";
+
 import RotatingLogo from "./RotatingLogo";
 import SocialIcons from "./SocialIcons.tsx";
+import {useScroll} from "../contexts/ScrollContext.tsx";
 
 type FooterLink = {
-    link: string;
+    target: "about" | "representation" | "whatWeDo" | "contact";
     title: string;
 };
 
 const FooterLinks: FooterLink[] = [
-    { link: "#about", title: "About" },
-    { link: "#representation", title: "Services" },
-    { link: "#what-we-do", title: "What we do" },
-    { link: "#contact", title: "Contact" },
+    { target: "about", title: "About" },
+    { target: "representation", title: "Services" },
+    { target: "whatWeDo", title: "What we do" },
+    { target: "contact", title: "Contact" },
 ];
 
 const Footer = () => {
+    const { scrollTo } = useScroll();
+
     return (
         <section className="w-full bg-[var(--color-dark-700)] px-4 py-16 mt-28">
                 <div className="grid grid-cols-1 md:grid-cols-[1fr_auto] gap-12 items-start">
@@ -66,14 +71,18 @@ const Footer = () => {
                 </div>
 
                 <ul className="flex flex-col md:flex-row gap-4 mt-16">
-                    {FooterLinks.map(({ link, title }) => (
+                    {FooterLinks.map(({ target, title }) => (
                         <li
-                            key={link}
+                            key={target}
                             className="flex-1 py-2.5 border-t border-[var(--color-light-100)]"
                         >
                             <a
-                                href={link}
-                                className="caption-bold uppercase text-[var(--color-light-100)] hover:text-[var(--color-green-300)]"
+                                href="#"
+                                onClick={(e) => {
+                                    e.preventDefault();
+                                    scrollTo(target);
+                                }}
+                                className="caption-bold uppercase text-[var(--color-light-100)] hover:text-[var(--color-green-300)] cursor-pointer"
                             >
                                 {title}
                             </a>

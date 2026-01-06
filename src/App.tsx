@@ -1,3 +1,4 @@
+import {ScrollProvider} from "./contexts/ScrollContext.tsx";
 import Header from "./components/Header.tsx";
 import Hero from "./components/Hero.tsx";
 import About from "./components/About.tsx";
@@ -11,6 +12,7 @@ import Footer from "./components/Footer.tsx";
 const App = () => {
     return (
         <>
+            <ScrollProvider>
             <div className="max-w-[1600px] mx-auto px-4 md:px-8 lg:px-10">
                 <Header/>
                 <Hero/>
@@ -21,6 +23,7 @@ const App = () => {
             </div>
             <Contact/>
             <Footer/>
+            </ScrollProvider>
         </>
     )
 }

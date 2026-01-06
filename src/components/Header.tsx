@@ -4,17 +4,24 @@ import { useState } from "react";
 import { Burger } from "./Burger";
 import RotatingLogo from "./RotatingLogo";
 import Button from "./Button.tsx";
+import {useScroll} from "../contexts/ScrollContext.tsx";
 
-type NavLink = { id: number; title: string; url: `#${string}` };
+type NavLink = {
+    id: number;
+    title: string;
+    target: "about" | "representation" | "whatWeDo" | "contact";
+};
 
 const navLinks: NavLink[] = [
-    { id: 1, title: "About", url: "#about" },
-    { id: 2, title: "Services", url: "#representation" },
-    { id: 3, title: "What we do", url: "#what-we-do" },
-    { id: 4, title: "Contact", url: "#contact" },
+    { id: 1, title: "About", target: "about" },
+    { id: 2, title: "Services", target: "representation" },
+    { id: 3, title: "What we do", target: "whatWeDo" },
+    { id: 4, title: "Contact", target: "contact" },
 ];
 
 const Header = () => {
+    const { scrollTo } = useScroll();
+
     const [openNavigation, setOpenNavigation] = useState(false);
 
     const toggleMenu = () => {
@@ -25,13 +32,18 @@ const Header = () => {
         setOpenNavigation(false);
     };
 
+    const handleNavClick = (target: NavLink["target"]) => {
+        closeMenu();
+        scrollTo(target);
+    };
+
     return (
         <header className="w-full z-50 bg-[var(--color-light-100)] relative">
             <div className="flex flex-col gap-6 py-6 lg:grid lg:grid-cols-3 lg:items-center lg:gap-10">
                 <div className="flex items-center justify-between lg:hidden w-full">
                         <RotatingLogo />
                     <div className="flex items-center gap-4">
-                        <Button href="#contact" variant="primary" onClick={closeMenu} className="hidden md:flex">
+                        <Button onClick={() => handleNavClick("contact")} variant="primary" className="hidden md:flex text-caption">
                             brief us
                         </Button>
 
@@ -69,32 +81,27 @@ const Header = () => {
                         {navLinks.map((item) => (
                             <a
                                 key={item.id}
-                                href={item.url}
-                                className=" h5 lg:body w-full text-center capitalize hover:text-[var(--color-green-300)] lg:w-auto whitespace-nowrap "
-                                onClick={closeMenu}
+                                href="#"
+                                onClick={(e) => {
+                                    e.preventDefault();
+                                    handleNavClick(item.target);
+                                }}
+                                className="h5 lg:body w-full text-center capitalize hover:text-[var(--color-green-300)] lg:w-auto whitespace-nowrap cursor-pointer"
                             >
                                 {item.title}
                             </a>
                         ))}
 
-                        <a
-                            href="#contact"
-                            className="flex md:hidden btn-primary text-caption uppercase w-full text-center"
-                            onClick={closeMenu}
-                        >
+                        <Button onClick={() => handleNavClick("contact")} variant="primary" className="flex md:hidden text-caption w-full">
                             brief us
-                        </a>
+                        </Button>
                     </div>
                 </nav>
 
                 <div className="hidden lg:flex lg:justify-end lg:order-3">
-                    <a
-                        href="#contact"
-                        className="btn-primary text-caption uppercase text-center w-48"
-                        onClick={closeMenu}
-                    >
+                    <Button onClick={() => handleNavClick("contact")} variant="primary" className=" w-48 text-caption">
                         brief us
-                    </a>
+                    </Button>
                 </div>
             </div>
         </header>

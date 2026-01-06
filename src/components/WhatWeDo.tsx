@@ -1,4 +1,5 @@
 import Button from "./Button.tsx";
+import { useScroll } from "../contexts/ScrollContext";
 
 type WhatWeDoItem = {
     id: number;
@@ -16,23 +17,19 @@ const WhatWeDoItems:WhatWeDoItem[] =[
 ]
 
 const WhatWeDo = () => {
+    const { scrollTo, sections } = useScroll();
     return (
-        <section id="what-we-do" className="mt-28">
+        <section id="what-we-do" ref={sections.whatWeDo} className="mt-28">
             <div className="flex flex-col md:flex-row justify-between gap-10 mb-14">
                 <h2 className="h1 lg:w-2/3">Five ways we help brands <span className="text-[var(--color-green-300)]">be heard</span> </h2>
                 <div className="flex items-end ">
-                    <a
-                        href="#contact"
-                        className=""
+                    <Button
+                        variant="primary"
+                        className="w-full md:w-auto text-caption"
+                        onClick={() => scrollTo("contact")}
                     >
-
-                    </a>
-
-
-                    <Button href="#contact" variant="primary" className="w-full md:w-auto text-caption">
                         Contact Us
                     </Button>
-
                 </div>
             </div>
 

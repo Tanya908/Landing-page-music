@@ -5,24 +5,23 @@ import React, { useState } from "react";
 type ButtonVariant = "primary" | "secondary";
 
 type ButtonProps = {
-    href: string;
     children: React.ReactNode;
     variant?: ButtonVariant;
     disabled?: boolean;
     className?: string;
-    onClick?: (event: React.MouseEvent<HTMLAnchorElement>) => void;
+    onClick?: (event: React.MouseEvent<HTMLButtonElement>) => void;
 };
 
 const Button = ({
-                    href,
                     children,
                     variant = "primary",
                     disabled = false,
                     className = "",
+                    onClick,
                 }: ButtonProps) => {
     const [isClicked, setIsClicked] = useState(false);
 
-    const handleClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
+    const handleClick = (e: React.MouseEvent<HTMLButtonElement>) => {
         if (disabled) {
             e.preventDefault();
             return;
@@ -30,6 +29,8 @@ const Button = ({
 
         setIsClicked(true);
         setTimeout(() => setIsClicked(false), 120);
+
+        onClick?.(e);
     };
 
     const baseClass = "btn-base";
@@ -45,23 +46,22 @@ const Button = ({
         isClicked && variant === "primary" ? "btn-primary-clicked" : "";
 
     return (
-        <a
-            href={href}
+        <button
+            type="button"
             onClick={handleClick}
-            aria-disabled={disabled}
+            disabled={disabled}
             className={[
                 baseClass,
                 variantClass,
                 disabledClass,
                 clickedClass,
-                disabled ? "pointer-events-none opacity-50" : "",
                 className,
             ]
                 .filter(Boolean)
                 .join(" ")}
         >
             {children}
-        </a>
+        </button>
     );
 };
 

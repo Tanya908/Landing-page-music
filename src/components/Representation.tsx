@@ -1,3 +1,7 @@
+"use client";
+
+import {useScroll} from "../contexts/ScrollContext.tsx";
+
 type CardItem = {
     title: string;
     img: string;
@@ -12,8 +16,9 @@ const CardItems:CardItem[] = [
 ];
 
 const Representation = () => {
+    const { sections } = useScroll();
     return (
-        <section id="representation" className="mt-28">
+        <section id="representation" ref={sections.representation} className="mt-28">
             <p className="caption text-[var(--color-green-700)] text-center mb-4 ">
                 Representation isn’t a trend. It’s our standard
             </p>

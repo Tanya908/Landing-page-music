@@ -1,4 +1,8 @@
+"use client";
+
 import Button from "./Button.tsx";
+import {useScroll} from "../contexts/ScrollContext.tsx";
+
 
 type AboutItem = {
     title: string;
@@ -13,8 +17,10 @@ const AboutItems: AboutItem[] = [
 ];
 
 const About = () => {
+    const { sections, scrollTo } = useScroll();
+
     return (
-        <section id="about" className="grid grid-cols-1 lg:grid-cols-2 gap-6  ">
+        <section id="about" ref={sections.about} className="grid grid-cols-1 lg:grid-cols-2 gap-6  ">
             <div className="flex flex-col h-full">
                 <div className="flex gap-4 items-center">
                     <img src="/arrowText.svg" className="h-3 w-4" alt="arrow" />
@@ -47,9 +53,14 @@ const About = () => {
                 </div>
 
                 <div className="flex justify-center lg:justify-start mt-auto">
-                    <Button href="#representation" variant="secondary" className="body-medium">
+                    <Button
+                        variant="secondary"
+                        className="body-medium"
+                        onClick={() => scrollTo("representation")}
+                    >
                         Our Approach
                     </Button>
+
                 </div>
             </div>
 

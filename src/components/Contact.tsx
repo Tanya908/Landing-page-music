@@ -1,4 +1,7 @@
+"use client";
+
 import { useState } from "react";
+import {useScroll} from "../contexts/ScrollContext.tsx";
 
 const options:string[] = [
     "Music Trend Reports + Cultural Compass",
@@ -11,11 +14,13 @@ const options:string[] = [
 const Contact = () => {
     const [open, setOpen] = useState(false);
     const [value, setValue] = useState<string>("Services needed");
+    const { sections } = useScroll();
 
     return (
         <section
+            ref={sections.contact}
             id="contact"
-            className="w-full bg-cover bg-center mt-28 overflow-x-hidden"
+            className="w-full bg-cover bg-center mt-28 overflow-x-hidden "
             style={{ backgroundImage: "url('/contact.png')" }}
         >
             <div className="flex justify-center gap-4 px-4 py-14 md:py-10 md:px-14">
