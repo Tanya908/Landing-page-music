@@ -1,7 +1,6 @@
 
 import React from "react";
 
-
 type BurgerProps = {
     onToggle: () => void,
     className?: string,
@@ -22,7 +21,7 @@ export const Burger: React.FC<BurgerProps> = ({
                                               }) => {
     const common = {
         style: {transformBox: "fill-box" as const, transformOrigin: "center" as const},
-        className: "transition-transform duration-300 ease-in-out",
+        className: "transition-transform duration-300 ease-[cubic-bezier(0.4,0,0.2,1)]",
         stroke,
         strokeWidth,
         strokeLinecap: "square" as const,
@@ -37,12 +36,18 @@ export const Burger: React.FC<BurgerProps> = ({
             className={`inline-flex items-center justify-center select-none ${className}`}
         >
             <svg
-                width={open ? 27 : size}
-                height={open ? 27 : size}
+                width={size}
+                height={size}
                 viewBox="0 0 47 47"
                 fill="none"
                 xmlns="http://www.w3.org/2000/svg"
             >
+                <g
+                    className={`transition-transform duration-300 ease-[cubic-bezier(0.4,0,0.2,1)]
+                                ${open ? "scale-65" : "scale-100"}`}
+                    style={{ transformOrigin: "center",transformBox: "fill-box"}}
+                >
+
                 <line
                     x1="0"
                     y1="18"
@@ -51,7 +56,12 @@ export const Burger: React.FC<BurgerProps> = ({
                     {...common}
                     vectorEffect="non-scaling-stroke"
 
-                    className={`${common.className} ${open ? "translate-y-[5.5px] rotate-45" : ""}`}
+                    className={`${common.className} ${
+                        open
+                            ? "translate-y-[5.5px] rotate-45 scale-105 scale-x-75"
+                            : "scale-100"
+                    }`}
+
                 />
                 <line
                     x1="0"
@@ -61,8 +71,13 @@ export const Burger: React.FC<BurgerProps> = ({
                     {...common}
                     vectorEffect="non-scaling-stroke"
 
-                    className={`${common.className} ${open ? "-translate-y-[5.5px] -rotate-45" : ""}`}
+                    className={`${common.className} ${
+                        open
+                            ? "-translate-y-[5.5px] -rotate-45 scale-105 scale-x-75"
+                            : "scale-100"
+                    }`}
                 />
+                </g>
             </svg>
         </button>
     );
