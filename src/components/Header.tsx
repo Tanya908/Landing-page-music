@@ -99,7 +99,7 @@ const Header = () => {
                 </nav>
 
                 <div className="hidden lg:flex lg:justify-end lg:order-3">
-                    <Button onClick={() => handleNavClick("contact")} variant="primary" className=" w-48 text-caption">
+                    <Button onClick={() => handleNavClick("contact")} variant="primary" className="text-caption">
                         brief us
                     </Button>
                 </div>

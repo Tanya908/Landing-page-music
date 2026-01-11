@@ -41,9 +41,9 @@ const Hero = () => {
     };
 
     return (
-        <section className="mb-28">
-            <div className="flex flex-col gap-8 md:flex-row">
-                <h1 className="title lg:basis-[70%]">Music that moves culture</h1>
+        <section className="mb-28 mt-11 md:mt-16">
+            <div className="flex flex-col md:flex-row md:justify-between gap-8">
+                <h1 className="title lg:basis-[60%]">Music that moves culture</h1>
 
                 <div className="flex flex-col gap-2 md:self-end lg:basis-[30%]">
                     <h2 className="caption-bold uppercase mb-2">Female-founded music agency</h2>
@@ -53,7 +53,7 @@ const Hero = () => {
                 </div>
             </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-6 mt-11">
+            <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-6 mt-18">
                 {ServiceItems.map((item) => (
                     <div key={item.title} className="flex flex-col">
                         <p className="caption text-[var(--color-green-700)] max-w-full">{item.text}</p>

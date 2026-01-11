@@ -64,11 +64,11 @@ const About = () => {
                 </div>
             </div>
 
-            <div className="w-full h-full lg:h-auto">
+            <div className="aspect-[1/1] md:aspect-[4/3] lg:aspect-auto">
                 <img
                     src="/about.png"
                     alt="about"
-                    className="w-full h-full object-cover "
+                    className="w-full h-full object-cover"
                 />
             </div>
         </section>
