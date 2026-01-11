@@ -43,7 +43,11 @@ const Header = () => {
                 <div className="flex items-center justify-between lg:hidden w-full">
                         <RotatingLogo />
                     <div className="flex items-center gap-4">
+<<<<<<< Updated upstream
                         <Button onClick={() => handleNavClick("contact")} variant="primary" className="hidden md:flex text-caption">
+=======
+                        <Button href="#contact" variant="primary" onClick={closeMenu} className="hidden md:flex text-caption">
+>>>>>>> Stashed changes
                             brief us
                         </Button>
 
@@ -63,12 +67,9 @@ const Header = () => {
                     aria-label="Primary navigation"
                     className={`flex absolute top-full left-0 w-full z-50 bg-[var(--color-light-100)]
                                 flex-col items-center gap-10 pb-10 transition-opacity duration-200        
-                                ${openNavigation
-                                                ? "opacity-100 pointer-events-auto"
-                                                : "opacity-0 pointer-events-none"}                    
-                                lg:static lg:flex lg:opacity-100 lg:pointer-events-auto
-                                lg:w-auto lg:bg-transparent
-                                lg:flex-row lg:gap-6 lg:py-0 lg:order-1
+                                ${openNavigation ? "opacity-100" : "opacity-0 hidden" }                    
+                                lg:static lg:flex lg:opacity-100 lg:pointer-events-auto lg:w-auto
+                                lg:bg-transparent lg:flex-row lg:gap-6 lg:py-0 lg:order-1                     
                             `}
                 >
                     {openNavigation && (
@@ -99,7 +100,11 @@ const Header = () => {
                 </nav>
 
                 <div className="hidden lg:flex lg:justify-end lg:order-3">
+<<<<<<< Updated upstream
                     <Button onClick={() => handleNavClick("contact")} variant="primary" className="text-caption">
+=======
+                    <Button href="#contact" variant="primary" onClick={closeMenu} className="text-caption w-48">
+>>>>>>> Stashed changes
                         brief us
                     </Button>
                 </div>
