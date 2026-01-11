@@ -325,5 +325,34 @@
         animation: spin-logo 8s linear infinite;
     }
 
+.loader-track {
+    width: 100%;
+    max-width: 32rem;
+    height: 2rem;
+    background: var(--color-light-100);
+    overflow: hidden;
+    padding: 0 0.5rem;
+    display: flex;
+    align-items: center;
+}
+
+
+.loader-line {
+    width: 100%;
+    background: var(--color-green-300);
+    transform-origin: left;
+    animation: draw-line 1.2s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+    height: 1rem;
+}
+
+
+@keyframes draw-line {
+    from {
+        transform: scaleX(0);
+    }
+    to {
+        transform: scaleX(1);
+    }
+}
 
 
