@@ -225,6 +225,11 @@
 
 
 @layer components {
+    .btn-primary,
+    .btn-secondary {
+        touch-action: manipulation;
+        -webkit-tap-highlight-color: transparent;
+    }
 
     .btn-primary {
         display: inline-flex;
@@ -234,6 +239,7 @@
         padding: 12px 26px;
         white-space: nowrap;
         text-transform: uppercase;
+        cursor: pointer;
 
         border: 1px solid var(--color-dark-700);
         background: transparent;
@@ -245,15 +251,24 @@
                 transform 0.12s ease;
     }
 
-    .btn-primary:hover {
-        background: var(--color-dark-700);
-        color: var(--color-light-100);
+    @media (hover: hover) {
+        .btn-primary:hover {
+            background: var(--color-dark-700);
+            color: var(--color-light-100);
+        }
     }
 
     .btn-primary:active {
-        background: transparent;
-        color: var(--color-dark-700);
+        background: var(--color-dark-700);
+        color: var(--color-light-100);
         transform: scale(0.97);
+    }
+
+    .btn-primary:focus,
+    .btn-primary:focus-visible {
+        background: var(--color-dark-700);
+        color: var(--color-light-100);
+        outline: none;
     }
 
     .btn-primary-disabled {
@@ -274,13 +289,15 @@
                 transform 0.12s ease;
     }
 
-    .btn-secondary:hover {
-        border-bottom-color: var(--color-green-500);
+    @media (hover: hover) {
+        .btn-secondary:hover {
+            border-bottom-color: var(--color-green-500);
+        }
     }
 
     .btn-secondary:active {
+        border-bottom-color: var(--color-green-500);
         transform: translateY(1px);
-        border-bottom-color: var(--color-dark-700);
     }
 
     .btn-secondary-disabled {

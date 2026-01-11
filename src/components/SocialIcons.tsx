@@ -15,7 +15,7 @@ const SocialIcons = ({ type, href, label }: SocialIconsProps) => {
             rel="noopener noreferrer"
             className="
                 text-[var(--color-light-100)]
-                hover:text-[var(--color-green-300)]
+                hover:text-[var(--color-green-300)] active:text-[var(--color-green-300)]
                 transition-colors
             "
         >

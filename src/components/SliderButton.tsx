@@ -23,7 +23,9 @@ const SliderArrowButton = ({
                 transition-colors duration-200
                 ${disabled
                 ? "cursor-not-allowed"
-                : "hover:bg-[var(--color-green-700)]"}
+                : "hover:bg-[var(--color-green-700)] active:bg-[var(--color-green-700)] "
+            
+            }
             `}
         >
             <img

@@ -1,6 +1,4 @@
-"use client";
-
-import React, { useState } from "react";
+import React from "react";
 
 type ButtonVariant = "primary" | "secondary";
 
@@ -19,21 +17,6 @@ const Button = ({
                     className = "",
                     onClick,
                 }: ButtonProps) => {
-    const [isClicked, setIsClicked] = useState(false);
-
-    const handleClick = (e: React.MouseEvent<HTMLButtonElement>) => {
-        if (disabled) {
-            e.preventDefault();
-            return;
-        }
-
-        setIsClicked(true);
-        setTimeout(() => setIsClicked(false), 120);
-
-        onClick?.(e);
-    };
-
-    const baseClass = "btn-base";
     const variantClass = variant === "primary" ? "btn-primary" : "btn-secondary";
 
     const disabledClass = disabled
@@ -42,19 +25,14 @@ const Button = ({
             : "btn-secondary-disabled"
         : "";
 
-    const clickedClass =
-        isClicked && variant === "primary" ? "btn-primary-clicked" : "";
-
     return (
         <button
             type="button"
-            onClick={handleClick}
             disabled={disabled}
+            onClick={onClick}
             className={[
-                baseClass,
                 variantClass,
                 disabledClass,
-                clickedClass,
                 className,
             ]
                 .filter(Boolean)

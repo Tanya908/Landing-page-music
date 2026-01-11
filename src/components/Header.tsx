@@ -43,11 +43,7 @@ const Header = () => {
                 <div className="flex items-center justify-between lg:hidden w-full">
                         <RotatingLogo />
                     <div className="flex items-center gap-4">
-<<<<<<< Updated upstream
                         <Button onClick={() => handleNavClick("contact")} variant="primary" className="hidden md:flex text-caption">
-=======
-                        <Button href="#contact" variant="primary" onClick={closeMenu} className="hidden md:flex text-caption">
->>>>>>> Stashed changes
                             brief us
                         </Button>
 
@@ -87,7 +83,7 @@ const Header = () => {
                                     e.preventDefault();
                                     handleNavClick(item.target);
                                 }}
-                                className="h5 lg:body w-full text-center capitalize hover:text-[var(--color-green-300)] lg:w-auto whitespace-nowrap cursor-pointer"
+                                className="h5 lg:body w-full text-center capitalize hover:text-[var(--color-green-300)] active:text-[var(--color-green-300)] lg:w-auto whitespace-nowrap cursor-pointer"
                             >
                                 {item.title}
                             </a>
@@ -100,11 +96,7 @@ const Header = () => {
                 </nav>
 
                 <div className="hidden lg:flex lg:justify-end lg:order-3">
-<<<<<<< Updated upstream
                     <Button onClick={() => handleNavClick("contact")} variant="primary" className="text-caption">
-=======
-                    <Button href="#contact" variant="primary" onClick={closeMenu} className="text-caption w-48">
->>>>>>> Stashed changes
                         brief us
                     </Button>
                 </div>

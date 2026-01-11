@@ -57,8 +57,7 @@ const Contact = () => {
                                                     setOpen(false);
                                                 }}
                                                 className={`body cursor-pointer px-4 py-4 transition border-b border-[var(--color-light-200)]
-                                                 hover:bg-[var(--color-dark-700)] hover:text-[var(--color-light-200)]                                         
-                                                `}
+                                                 hover:bg-[var(--color-dark-700)] hover:text-[var(--color-light-200)] active:bg-[var(--color-dark-700)] active:text-[var(--color-light-200)]`}
                                             >
                                                 {option}
                                             </li>

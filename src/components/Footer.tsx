@@ -82,7 +82,7 @@ const Footer = () => {
                                     e.preventDefault();
                                     scrollTo(target);
                                 }}
-                                className="caption-bold uppercase text-[var(--color-light-100)] hover:text-[var(--color-green-300)] cursor-pointer"
+                                className="caption-bold uppercase text-[var(--color-light-100)] hover:text-[var(--color-green-300)] active:text-[var(--color-green-300)] cursor-pointer"
                             >
                                 {title}
                             </a>
