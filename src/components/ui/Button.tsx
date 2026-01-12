@@ -8,6 +8,7 @@ type ButtonProps = {
     disabled?: boolean;
     className?: string;
     onClick?: (event: React.MouseEvent<HTMLButtonElement>) => void;
+    type?: "button" | "submit" | "reset";
 };
 
 const Button = ({
@@ -16,6 +17,7 @@ const Button = ({
                     disabled = false,
                     className = "",
                     onClick,
+                    type = "button",
                 }: ButtonProps) => {
     const variantClass = variant === "primary" ? "btn-primary" : "btn-secondary";
 
@@ -27,7 +29,7 @@ const Button = ({
 
     return (
         <button
-            type="button"
+            type={type}
             disabled={disabled}
             onClick={onClick}
             className={[
