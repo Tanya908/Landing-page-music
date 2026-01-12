@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import {useScroll} from "../contexts/ScrollContext.tsx";
+import {useScroll} from "../../contexts/ScrollContext.tsx";
 
 const options:string[] = [
     "Music Trend Reports + Cultural Compass",
@@ -42,7 +42,7 @@ const Contact = () => {
                                     className=" w-full text-left form-field body-medium items-center grid grid-cols-[1fr_16px]"
                                 > {value}
                                     <img src="/arrowOpen.svg" alt="arrowOpen"
-                                           className={` w-4 h-4 transition-transform duration-300 ${open ? "rotate-180" : ""}`}
+                                         className={` w-4 h-4 transition-transform duration-300 ${open ? "rotate-180" : ""}`}
                                     />
                                 </button>
 

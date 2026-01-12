@@ -1,5 +1,5 @@
-import Button from "./Button.tsx";
-import { useScroll } from "../contexts/ScrollContext";
+import Button from "../ui/Button.tsx";
+import { useScroll } from "../../contexts/ScrollContext.tsx";
 
 type WhatWeDoItem = {
     id: number;

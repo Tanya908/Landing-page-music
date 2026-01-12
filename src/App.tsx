@@ -1,13 +1,13 @@
 import { ScrollProvider } from "./contexts/ScrollContext.tsx";
-import Header from "./components/Header.tsx";
-import Hero from "./components/Hero.tsx";
-import About from "./components/About.tsx";
-import Representation from "./components/Representation.tsx";
-import WhatWeDo from "./components/WhatWeDo.tsx";
-import PastCollabs from "./components/PastCollabs.tsx";
-import Contact from "./components/Contact.tsx";
-import Footer from "./components/Footer.tsx";
-import Preloader from "./components/Preloader.tsx";
+import Header from "./components/layout/Header.tsx";
+import Hero from "./components/sections/Hero.tsx";
+import About from "./components/sections/About.tsx";
+import Representation from "./components/sections/Representation.tsx";
+import WhatWeDo from "./components/sections/WhatWeDo.tsx";
+import PastCollabs from "./components/sections/PastCollabs.tsx";
+import Contact from "./components/sections/Contact.tsx";
+import Footer from "./components/layout/Footer.tsx";
+import Preloader from "./components/ui/Preloader.tsx";
 import {useState} from "react";
 
 

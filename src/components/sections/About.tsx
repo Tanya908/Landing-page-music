@@ -1,7 +1,7 @@
 "use client";
 
-import Button from "./Button.tsx";
-import {useScroll} from "../contexts/ScrollContext.tsx";
+import Button from "../ui/Button.tsx";
+import {useScroll} from "../../contexts/ScrollContext.tsx";
 
 
 type AboutItem = {

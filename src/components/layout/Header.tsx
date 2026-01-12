@@ -1,10 +1,10 @@
 "use client";
 
 import { useState } from "react";
-import { Burger } from "./Burger";
-import RotatingLogo from "./RotatingLogo";
-import Button from "./Button.tsx";
-import {useScroll} from "../contexts/ScrollContext.tsx";
+import { Burger } from "../ui/Burger.tsx";
+import RotatingLogo from "../ui/RotatingLogo.tsx";
+import Button from "../ui/Button.tsx";
+import {useScroll} from "../../contexts/ScrollContext.tsx";
 
 type NavLink = {
     id: number;

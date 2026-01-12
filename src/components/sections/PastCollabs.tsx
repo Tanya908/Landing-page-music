@@ -1,6 +1,6 @@
 "use client";
 
-import {usePastCollabs} from "../hooks/usePastCollabs.ts";
+import {usePastCollabs} from "../../hooks/usePastCollabs.ts";
 
 type CollabsLogo = {
     id: number;

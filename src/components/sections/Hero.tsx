@@ -1,6 +1,6 @@
 import { useState } from "react";
-import VideoCard from "./VideoCard";
-import SliderArrowButton from "./SliderButton.tsx";
+import VideoCard from "../ui/VideoCard.tsx";
+import SliderArrowButton from "../ui/SliderButton.tsx";
 
 const videos: string[] = [
     "1131395722",

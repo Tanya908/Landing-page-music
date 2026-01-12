@@ -1,6 +1,6 @@
 "use client";
 
-import {useScroll} from "../contexts/ScrollContext.tsx";
+import {useScroll} from "../../contexts/ScrollContext.tsx";
 
 type CardItem = {
     title: string;

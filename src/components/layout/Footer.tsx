@@ -1,8 +1,8 @@
 "use client";
 
-import RotatingLogo from "./RotatingLogo";
-import SocialIcons from "./SocialIcons.tsx";
-import {useScroll} from "../contexts/ScrollContext.tsx";
+import RotatingLogo from "../ui/RotatingLogo.tsx";
+import SocialIcons from "../ui/SocialIcons.tsx";
+import {useScroll} from "../../contexts/ScrollContext.tsx";
 
 type FooterLink = {
     target: "about" | "representation" | "whatWeDo" | "contact";
