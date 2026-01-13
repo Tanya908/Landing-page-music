@@ -1,16 +1,14 @@
-import type {ContactFormData} from "../components/sections/Contact.tsx";
+import type {ContactPayload} from "../types/contact.ts";
 
-export async function ContactService(data: ContactFormData) {
+export async function submitContactForm(data: ContactPayload) {
     const res = await fetch("/api/contact", {
         method: "POST",
-        headers: {
-            "Content-Type": "application/json",
-        },
+        headers: { "Content-Type": "application/json" },
         body: JSON.stringify(data),
     });
 
     if (!res.ok) {
-        const error = await res.text();
-        throw new Error(error || "Failed to submit form");
+        throw new Error("Failed to submit form");
     }
+    return res.json();
 }

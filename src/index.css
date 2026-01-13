@@ -333,6 +333,17 @@
         border-bottom: 1px solid var(--color-dark-700);
         outline: none;
     }
+
+    .error-message{
+        text-align: left;
+        background-color: var(--color-red);
+        color: var(--color-light-100);
+        padding-left: 8px;
+        font-family: var(--font-raleway), sans-serif;
+        font-size: var(--text-caption);
+        line-height: var(--text-caption--line-height);
+        font-weight: var(--text-caption--font-weight);
+    }
 }
 
 
