@@ -90,11 +90,9 @@ const Contact = () => {
     };
 
     return (
-        <section
-            ref={sections.contact}
-            id="contact"
-            className="w-full bg-cover bg-center mt-28"
-            style={{ backgroundImage: "url('/contact.png')" }}
+        <section ref={sections.contact} id="contact"
+                 className="w-full bg-cover bg-center mt-28"
+                 style={{ backgroundImage: "url('/contact.png')" }}
         >
             <div className="flex justify-center px-4 py-14">
                 <div className="w-full max-w-2xl bg-[var(--color-light-100)] px-6 py-10 text-center">
@@ -102,18 +100,17 @@ const Contact = () => {
                     <p className="body mb-6 text-[var(--color-green-700)]">
                         Whether you need track ideas, an original score or want to cover a famous track, we're ready to get started.
                     </p>
+                    <a href="mailto:hello@freereinmusic.com" className="body-bold uppercase text-[var(--color-green-700)]">
+                        hello@freereinmusic.com
+                    </a>
 
                     <form onSubmit={handleSubmit} noValidate>
-                        <fieldset className="flex flex-col gap-4">
+                        <fieldset className="flex flex-col gap-4 mt-11">
 
                             <label className="flex flex-col">
                                 <input
-                                    className="form-field"
-                                    name="name"
-                                    placeholder="Name"
-                                    value={formData.name}
-                                    onChange={handleChange}
-                                    onBlur={handleBlur}
+                                    className="form-field" name="name" placeholder="Name"
+                                    value={formData.name} onChange={handleChange} onBlur={handleBlur}
                                 />
                                 {errors.name?.map((err, i) => (
                                     <p key={i} className="error-message">{err}</p>
@@ -122,12 +119,8 @@ const Contact = () => {
 
                             <label className="flex flex-col">
                                 <input
-                                    className="form-field"
-                                    name="role"
-                                    placeholder="Company / Role"
-                                    value={formData.role}
-                                    onChange={handleChange}
-                                    onBlur={handleBlur}
+                                    className="form-field" name="role" placeholder="Company / Role"
+                                    value={formData.role} onChange={handleChange} onBlur={handleBlur}
                                 />
                                 {errors.role?.map((err, i) => (
                                     <p key={i} className="error-message">{err}</p>
@@ -136,13 +129,8 @@ const Contact = () => {
 
                             <label className="flex flex-col">
                                 <input
-                                    className="form-field"
-                                    type="email"
-                                    name="email"
-                                    placeholder="Email"
-                                    value={formData.email}
-                                    onChange={handleChange}
-                                    onBlur={handleBlur}
+                                    className="form-field" type="email" name="email" placeholder="Email"
+                                    value={formData.email} onChange={handleChange} onBlur={handleBlur}
                                 />
                                 {errors.email?.map((err, i) => (
                                     <p key={i} className="error-message">{err}</p>
@@ -150,21 +138,14 @@ const Contact = () => {
                             </label>
 
                             <textarea
-                                className="form-field resize-none"
-                                rows={2}
-                                name="message"
-                                placeholder="Message / link to brief"
-                                value={formData.message}
-                                onChange={handleChange}
+                                className="form-field resize-none" rows={2} name="message"
+                                placeholder="Message / link to brief" value={formData.message} onChange={handleChange}
                             />
 
                             <label className="flex items-start gap-6 cursor-pointer mt-8 mb-14">
                                 <input
-                                    type="checkbox"
-                                    name="privacyAccepted"
-                                    checked={formData.privacyAccepted}
-                                    onChange={handleChange}
-                                    className="peer hidden"
+                                    type="checkbox" name="privacyAccepted" checked={formData.privacyAccepted}
+                                    className="peer hidden" onChange={handleChange}
                                 />
                                 <span className="w-4 h-4 border border-[var(--color-green-500)] grid place-items-center
                                  transition [&>img]:opacity-0 peer-checked:[&>img]:opacity-100 aspect-square">
@@ -176,9 +157,8 @@ const Contact = () => {
                             </label>
 
                             <Button type="submit" disabled={!isFormValid}>
-                                {loading ? "Sending..." : "Brief us"}
+                                {loading ? "Sending..." : "Send"}
                             </Button>
-
                         </fieldset>
                     </form>
                 </div>

@@ -23,25 +23,25 @@ const Footer = () => {
         <section className="w-full bg-[var(--color-dark-700)] px-4 py-16 mt-28">
                 <div className="grid grid-cols-1 md:grid-cols-[1fr_auto] gap-12 items-start">
                     <div className="flex flex-col order-1">
-                        <h5 className="h5-bold uppercase text-[var(--color-light-100)] ">
+                        <h5 className="h5-bold uppercase text-[var(--color-light-100)]">
                             The new music agency
                         </h5>
 
-                        <h2 className="h2 text-[var(--color-green-100)] mt-8 lg:max-w-2xl">
+                        <h2 className="h2 text-[var(--color-green-100)] mt-14 lg:max-w-3xl">
                             Female-founded music agency reshaping how brands choose and create music.
                         </h2>
                     </div>
 
                     <div className="flex justify-center md:justify-end order-2">
-                        <RotatingLogo color="#ffffff" size={128} />
+                        <RotatingLogo color="#ffffff" className="w-32 h-32" />
                     </div>
                 </div>
 
-                <div className="grid grid-cols-1 md:grid-cols-[auto_1fr] gap-10 mt-16 items-center">
+                <div className="grid grid-cols-1 md:grid-cols-[auto_1fr] gap-10 mt-14 items-center">
                     <div className="flex flex-col md:flex-row md:items-center gap-2 md:gap-6">
                         <a
                             href="mailto:hello@freereinmusic.com"
-                            className="body text-[var(--color-green-100)]"
+                            className="body text-[var(--color-green-100)] hover:text-[var(--color-green-300)]"
                         >
                             hello@freereinmusic.com
                         </a>
@@ -70,7 +70,7 @@ const Footer = () => {
                     </div>
                 </div>
 
-                <ul className="flex flex-col md:flex-row gap-4 mt-16">
+                <ul className="grid grid-cols-1 md:grid-cols-4 gap-8 mt-28">
                     {FooterLinks.map(({ target, title }) => (
                         <li
                             key={target}
@@ -90,10 +90,10 @@ const Footer = () => {
                     ))}
                 </ul>
 
-                <ul className="flex flex-col md:flex-row gap-8 caption  uppercase text-[var(--color-green-100)] mt-16">
-                    <li>© Free Rein Music Ltd</li>
-                    <li>Privacy Policy / Terms.</li>
-                    <li>All rights reserved 2025 FREE REIN MUSIC LTD</li>
+                <ul className="grid grid-cols-1 md:grid-cols-4 md:justify-between gap-4 md:gap-8 caption text-[var(--color-green-100)] mt-16 whitespace-nowrap">
+                    <li className="md:col-start-1">© Free Rein Music Ltd</li>
+                    <li className="md:col-start-3">Privacy Policy / Terms.</li>
+                    <li className="md:col-start-4">All rights reserved 2025</li>
                 </ul>
         </section>
     );

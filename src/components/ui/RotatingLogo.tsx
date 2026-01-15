@@ -1,14 +1,13 @@
 type RotatingLogoProps = {
     color?: string;
-    size?: number;
+    className?: string;
 };
 
-const RotatingLogo = ({ color = "#151717",size = 56 }: RotatingLogoProps) => {
+const RotatingLogo = ({ color = "#028762", className="" }: RotatingLogoProps) => {
     return (
         <div
-             style={{ width: size,
-                 height: size,
-                 color, }}
+            className={className}
+            style={{ color }}
         >
             <svg
                 className="w-full h-full animate-rotate"

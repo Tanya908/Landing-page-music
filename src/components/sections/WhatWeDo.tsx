@@ -20,7 +20,7 @@ const WhatWeDo = () => {
     const { scrollTo, sections } = useScroll();
     return (
         <section id="what-we-do" ref={sections.whatWeDo} className="mt-28">
-            <div className="flex flex-col md:flex-row justify-between gap-10 mb-14">
+            <div className="flex flex-col md:flex-row justify-between gap-10 mb-16">
                 <h2 className="h1 lg:w-2/3">Five ways we help brands <span className="text-[var(--color-green-300)]">be heard</span> </h2>
                 <div className="flex items-end ">
                     <Button
@@ -52,7 +52,7 @@ const WhatWeDo = () => {
                             <p className="body text-[var(--color-green-700)]">{item.description}</p>
                         </div>
 
-                        <div className="aspect-square shrink-0 overflow-hidden place-self-center">
+                        <div className="aspect-square shrink-0 overflow-hidden place-self-center max-w-80">
                             <img src={item.img} alt={item.title} className="w-full h-full object-cover"/>
                         </div>
                     </article>

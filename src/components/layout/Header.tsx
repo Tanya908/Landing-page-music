@@ -39,9 +39,9 @@ const Header = () => {
 
     return (
         <header className="w-full z-50 bg-[var(--color-light-100)] relative">
-            <div className="flex flex-col gap-6 py-6 lg:grid lg:grid-cols-3 lg:items-center lg:gap-10">
+            <div className="flex flex-col gap-6 pt-6 lg:grid lg:grid-cols-3 lg:items-center lg:gap-10">
                 <div className="flex items-center justify-between lg:hidden w-full">
-                        <RotatingLogo />
+                        <RotatingLogo className="w-[68px] h-[68px] md:w-[88px] md:h-[88px]"/>
                     <div className="flex items-center gap-4">
                         <Button onClick={() => handleNavClick("contact")} variant="primary" className="hidden md:flex text-caption">
                             brief us
@@ -56,13 +56,13 @@ const Header = () => {
                 </div>
 
                 <div className="hidden lg:flex lg:justify-center lg:order-2">
-                        <RotatingLogo size={80} />
+                        <RotatingLogo className="w-[88px] h-[88px]" />
                 </div>
 
                 <nav
                     aria-label="Primary navigation"
                     className={`flex absolute top-full left-0 w-full z-50 bg-[var(--color-light-100)]
-                                flex-col items-center gap-10 pb-10 transition-opacity duration-200        
+                                flex-col items-center gap-10 transition-opacity duration-200        
                                 ${openNavigation ? "opacity-100" : "opacity-0 hidden" }                    
                                 lg:static lg:flex lg:opacity-100 lg:pointer-events-auto lg:w-auto
                                 lg:bg-transparent lg:flex-row lg:gap-6 lg:py-0 lg:order-1                     
@@ -70,11 +70,11 @@ const Header = () => {
                 >
                     {openNavigation && (
                         <div className="lg:hidden w-screen h-px bg-[var(--color-green-500)]
-                                         absolute left-1/2 -translate-x-1/2 top-0"
+                                         absolute left-1/2 -translate-x-1/2 top-0 mt-6"
                         />
                     )}
 
-                    <div className="mx-auto flex w-full flex-col items-center mt-6 gap-10 lg:flex-row lg:gap-6">
+                    <div className="mx-auto flex w-full flex-col items-center my-6 gap-10 lg:flex-row lg:gap-6">
                         {navLinks.map((item) => (
                             <a
                                 key={item.id}
@@ -89,7 +89,7 @@ const Header = () => {
                             </a>
                         ))}
 
-                        <Button onClick={() => handleNavClick("contact")} variant="primary" className="flex md:hidden text-caption w-full">
+                        <Button onClick={() => handleNavClick("contact")} variant="primary" className="flex md:hidden text-caption w-full mb-8">
                             brief us
                         </Button>
                     </div>

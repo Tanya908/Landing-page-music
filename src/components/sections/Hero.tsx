@@ -41,19 +41,20 @@ const Hero = () => {
     };
 
     return (
-        <section className="mb-28 mt-11 md:mt-16">
-            <div className="flex flex-col md:flex-row md:justify-between gap-8">
-                <h1 className="title lg:basis-[60%]">Music that moves culture</h1>
+        <section className="mt-11 md:mt-16">
+            <div className="grid gap-12 lg:grid-cols-[73%_1fr]">
+                <h1 className="title w-full">Music that moves culture</h1>
 
-                <div className="flex flex-col gap-2 md:self-end lg:basis-[30%]">
+                <div className="flex flex-col gap-2 md:self-end">
                     <h2 className="caption-bold uppercase mb-2">Female-founded music agency</h2>
                     <p className="caption text-[var(--color-green-700)]">
-                        We help brands find, license and compose music that feels inevitable.
+                        We are a female-founded, culture-first music agency. We help brands find,license and
+                         compose music that feels inevitable - blending music insights, real artists and rigorous craft.
                     </p>
                 </div>
             </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-6 mt-18">
+            <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-6 mt-11">
                 {ServiceItems.map((item) => (
                     <div key={item.title} className="flex flex-col">
                         <p className="caption text-[var(--color-green-700)] max-w-full">{item.text}</p>
@@ -74,8 +75,8 @@ const Hero = () => {
 
             <div className="flex flex-col items-center md:flex-row md:justify-between w-full mt-3.5 md:mt-6">
 
-                <p className="text-caption md:body text-center md:text-left text-[var(--color-green-700)] w-full md:w-md lg:w-lg">
-                    Projects music supervised by our founder, Chloe Heatlie during her time at Adelphoi Music.
+                <p className="text-caption md:body text-center md:text-left text-[var(--color-green-700)] w-sm md:w-md lg:w-lg">
+                    Projects music supervised by our founder, Chloe Heatlie, during her time at Adelphoi Music and MassiveMusic.
                 </p>
 
                 <div className="flex gap-6 md:self-end mt-8 md:mt-0">

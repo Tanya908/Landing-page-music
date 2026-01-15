@@ -24,7 +24,7 @@
     --text-title--line-height: 85%;
     --text-title--font-weight: 400;
 
-    --text-mobile-title: 51px;
+    --text-mobile-title: 60px;
     --text-mobile-title--line-height: 100%;
     --text-mobile-title--font-weight: 500;
     --text-mobile-title-transform:uppercase;
@@ -105,7 +105,6 @@
     text-transform: var(--text-mobile-title-transform);
 }
 
-
     @utility title {
         @variant md {
             font-size: var(--text-title);
@@ -127,7 +126,6 @@
             font-size: var(--text-heading-1);
         }
     }
-
 
 @utility h2 {
     font-family: var(--font-raleway), sans-serif;
@@ -156,7 +154,6 @@
         }
     }
 
-
 @utility h4 {
     font-family: var(--font-manrope), sans-serif;
     font-size: var(--text-mobile-heading-4);
@@ -170,8 +167,6 @@
             font-size: var(--text-heading-4);
         }
     }
-
-
 
 @utility h5 {
     font-family: var(--font-manrope), sans-serif;
@@ -286,7 +281,6 @@
         transform: none;
     }
 
-
     .btn-secondary {
         padding: 0 8px 6px;
         border-bottom: 2px solid var(--color-dark-700);
@@ -321,17 +315,18 @@
         border: none;
         border-bottom: 1px solid var(--color-dark-700);
         background: transparent;
+        transition: color 0.2s ease, border-color 0.2s ease;
+
         color: var(--color-green-700);
         outline: none;
     }
 
     .form-field::placeholder {
-        color: var(--color-green-700);
+        color: var(--color-dark-700);
     }
 
-    .form-field:focus {
-        border-bottom: 1px solid var(--color-dark-700);
-        outline: none;
+    .form-field:not(:focus):not(:placeholder-shown) {
+        color: var(--color-dark-700);
     }
 
     .error-message{
@@ -372,7 +367,6 @@
     align-items: center;
 }
 
-
 .loader-line {
     width: 100%;
     background: var(--color-green-300);
@@ -380,7 +374,6 @@
     animation: draw-line 1.2s cubic-bezier(0.4, 0, 0.2, 1) forwards;
     height: 1rem;
 }
-
 
 @keyframes draw-line {
     from {
